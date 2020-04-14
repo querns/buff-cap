@@ -114,6 +114,9 @@
         int16Array.forEach(buff => {
             $(`#spell-${buff}`).prop("checked", true);
         });
+        $(".has-buff-count").each((index, element) => {
+            calculateSubSection($(element).find("input[type='checkbox']").first());
+        });
     }
 
     calculateTotalBuffs();
