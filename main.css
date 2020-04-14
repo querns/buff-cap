@@ -1,0 +1,64 @@
+.bc-buff-section img {
+  height: 20px;
+  width: 20px;
+}
+
+div {
+  vertical-align: middle;
+}
+
+a[data-toggle=collapse] {
+  display: inline-block;
+  text-align: center;
+  min-width: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+small {
+  display: block;
+}
+
+a + small {
+  padding-left: 1.5rem;
+}
+
+ul:not(.sub-section) li a:not(.small-inline) {
+  display: block;
+}
+
+input[type=checkbox] {
+  transform: scale(1.25);
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+label, small {
+  user-select: none;
+}
+
+.buff-count {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  vertical-align: middle;
+  border: 1px solid darkgrey;
+  background-color: grey;
+  color: black;
+  text-align: center;
+  font-size: 0.8rem;
+  line-height: 0.8rem;
+  margin-left: -2px;
+  margin-right: 4px;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+.has-buff-count {
+  min-height: 30px;
+}
+
+/*# sourceMappingURL=main.css.map */
