@@ -6,18 +6,23 @@
     <title>Buff Cap Calculator</title>
     <link href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/slate/bootstrap.min.css" rel="stylesheet" integrity="sha384-G9YbB4o4U6WS4wCthMOpAeweY4gQJyyx0P3nZbEBHyz+AtNoeasfRChmek1C2iqV" crossorigin="anonymous">
     <link rel="stylesheet" href="main.css" />
-    <script>let whTooltips = {colorLinks: true, iconizeLinks: false, iconSize: "small", hide: {droppedby: true, dropchance: true, sellprice: true, maxstack: true, ilvl: true}};</script>
+    <script>// noinspection JSUnusedGlobalSymbols
+    let whTooltips = {colorLinks: true, iconizeLinks: false, iconSize: "small", hide: {droppedby: true, dropchance: true, sellprice: true, maxstack: true, ilvl: true}};</script>
     <script src="https://wow.zamimg.com/widgets/power.js"></script>
 </head>
 <body>
+<nav class="navbar fixed-top navbar-expand-md bg-dark">
     <div class="container">
-        <h1>WOW Classic Buff Cap Calculator</h1>
-        <div class="row bc-buff-section">
-            <div class="col-sm-auto">
-                <div class="row d-sm-block">
-
+        <h1>WOW Classic Buff Cap Calculator <span class="badge badge-success" id="total-buff-count">0</span></h1>
+    </div>
+</nav>
+<main class="container">
+    <div class="row bc-buff-section">
+        <div class="col-sm-auto">
+            <div class="row d-sm-block">
+                <div class="col-sm-auto mr-sm-3 float-left">
                     <!--World Buffs-->
-                    <div class="col-sm-auto border mr-sm-3 float-left bc-cell">
+                    <div class="border mb-sm-3 pl-3 pr-3 bc-cell">
                         <div class="bc-cell-header m-sm-1">
                             <span class="h4">World Buffs</span>
                             <button class="ml-3 btn-sm btn-secondary">Clear</button>
@@ -59,7 +64,8 @@
                         </div>
                     </div>
                     <!--Holiday-->
-                    <div class="col-sm-auto border mr-sm-3 float-left bc-cell">
+                    <div class="border mb-sm-3 pl-3 pr-3 bc-cell">
+
                         <div class="bc-cell-header m-sm-1">
                             <span class="h4">Holiday</span>
                             <button class="ml-3 btn-sm btn-secondary">Clear</button>
@@ -130,6 +136,7 @@
                             <label for="spell-23768">Sayge's Dark Fortune...</label>
                             <a href="#darkmoon-faire" data-toggle="collapse">▼</a>
                             <ul class="collapse mb-sm-3" id="darkmoon-faire">
+                                <li><small>You can only have one of these at one time.</small></li>
                                 <li>
                                     <a href="https://classic.wowhead.com/spell=23768/sayges-dark-fortune-of-damage" data-wowhead="buff"><img src="img/inv_misc_orb_02.jpg" alt="Sayge's Dark Fortune of Damage"/> ... of Damage</a>
                                     <small>Slay the man :: Execute painfully</small>
@@ -164,235 +171,666 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-                    <!--Consumables-->
-                    <div class="col-sm-auto border mr-sm-3 float-left bc-cell">
-                        <div class="bc-cell-header m-sm-1">
-                            <span class="h4">Consumables</span>
-                            <button class="ml-3 btn-sm btn-secondary">Clear</button>
+                </div>
+                <!--Consumables-->
+                <div class="col-sm-auto border mr-sm-3 float-left bc-cell">
+                    <div class="bc-cell-header m-sm-1">
+                        <span class="h4">Consumables</span>
+                        <button class="ml-3 btn-sm btn-secondary">Clear</button>
+                    </div>
+                    <!--Flask-->
+                    <div>
+                        <input type="checkbox" id="spell-17626"/>
+                        <img src="img/inv_potion_62.jpg" alt="Flasks"/>
+                        <label for="spell-17626">Flask of...</label>
+                        <a href="#flasks" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="flasks">
+                            <li><small>Only one of these may be active at one time.</small></li>
+                            <li><small>Persists on death.</small></li>
+                            <li><a href="https://classic.wowhead.com/item=13510/flask-of-the-titans"><img src="img/inv_potion_62.jpg" alt="Flask of the Titans"/> ... the Titans</a></li>
+                            <li><a href="https://classic.wowhead.com/item=13512/flask-of-supreme-power"><img src="img/inv_potion_41.jpg" alt="Flask of Supreme Power"/> ... Supreme Power</a></li>
+                            <li><a href="https://classic.wowhead.com/item=13511/flask-of-distilled-wisdom"><img src="img/inv_potion_97.jpg" alt="Flask of Distilled Wisdom"/> ... Distilled Wisdom</a></li>
+                            <li><a href="https://classic.wowhead.com/item=13513/flask-of-chromatic-resistance"><img src="img/inv_potion_48.jpg" alt="Flask of Chromatic Resistance"/> ... Chromatic Resistance</a></li>
+                            <li><a href="https://classic.wowhead.com/item=13506/flask-of-petrification"><img src="img/inv_potion_26.jpg" alt="Flask of Petrification"/> ... Petrification</a></li>
+                        </ul>
+                    </div>
+                    <!--Zanza-->
+                    <div>
+                        <input type="checkbox" id="spell-24382"/>
+                        <img src="img/inv_misc_coin_08.jpg" alt="Zanza Potion" />
+                        <label for="spell-24382">Zanza Potion</label>
+                        <a href="#zanza" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="zanza">
+                            <li><small>Only one of these may be active at one time.</small></li>
+                            <li>
+                                <a href="https://classic.wowhead.com/item=20079/spirit-of-zanza"><img src="img/inv_potion_30.jpg" alt="Spirit of Zanza"/> Spirit of Zanza</a>
+                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/item=8411/lung-juice-cocktail">Lung Juice Cocktail</a>.</small>
+                            </li>
+                            <li><a href="https://classic.wowhead.com/item=20081/swiftness-of-zanza"><img src="img/inv_potion_31.jpg" alt="Swiftness of Zanza"/> Swiftness of Zanza</a></li>
+                            <li><a href="https://classic.wowhead.com/item=20080/sheen-of-zanza"><img src="img/inv_potion_29.jpg" alt="Sheen of Zanza"/> Sheen of Zanza</a></li>
+                        </ul>
+                    </div>
+                    <!--Blasted Lands-->
+                    <div>
+                        <input type="checkbox" id="spell-10667"/>
+                        <img src="img/inv_stone_15.jpg" alt="Blasted Lands Consumable"/>
+                        <label for="spell-10667">Blasted Lands Consumable</label>
+                        <a href="#blasted-lands" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="blasted-lands">
+                            <li><small>Only one of these may be active at one time.</small></li>
+                            <li><a href="https://classic.wowhead.com/item=8410/r-o-i-d-s#shared-cooldown"><img src="img/inv_stone_15.jpg" alt="R.O.I.D.S."/> R.O.I.D.S</a></li>
+                            <li><a href="https://classic.wowhead.com/item=8412/ground-scorpok-assay"><img src="img/inv_misc_dust_02.jpg" alt="Ground Scorpok Assay"/> Ground Scorpok Assay</a></li>
+                            <li>
+                                <a href="https://classic.wowhead.com/item=8411/lung-juice-cocktail"><img src="img/inv_drink_12.jpg" alt="Lung Juice Cocktail"/> Lung Juice Cocktail</a>
+                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/item=20079/spirit-of-zanza">Spirit of Zanza</a>.</small>
+                            </li>
+                            <li><a href="https://classic.wowhead.com/item=8423/cerebral-cortex-compound"><img src="img/inv_potion_32.jpg" alt="Cerebral Cortex Compound"/> Cerebral Cortex Compound</a></li>
+                            <li><a href="https://classic.wowhead.com/item=8424/gizzard-gum"><img src="img/inv_misc_food_30.jpg" alt="Gizzard Gum"/> Gizzard Gum</a></li>
+                        </ul>
+                    </div>
+                    <!--Agility-->
+                    <div>
+                        <input type="checkbox" id="spell-17538"/>
+                        <img src="img/inv_potion_32.jpg" alt="Agility"/>
+                        <label for="spell-17538">Agility</label>
+                        <a href="#agility" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="agility">
+                            <li><a href="https://classic.wowhead.com/item=13452/elixir-of-the-mongoose"><img src="img/inv_potion_32.jpg" alt="Elixir of the Mongoose"/> Elixir of the Mongoose</a></li>
+                            <li><a href="https://classic.wowhead.com/item=9187/elixir-of-greater-agility"><img src="img/inv_potion_94.jpg" alt="Elixir of Greater Agility"/> Elixir of Greater Agility</a></li>
+                            <li><a href="https://classic.wowhead.com/item=10309/scroll-of-agility-iv"><img src="img/inv_scroll_02.jpg" alt="Scroll of Agility IV"/> Scroll of Agility IV</a></li>
+                        </ul>
+                    </div>
+                    <!--Strength-->
+                    <div>
+                        <input type="checkbox" id="spell-16323"/>
+                        <img src="img/inv_misc_monsterscales_11.jpg" alt="Strength Consumable"/>
+                        <label for="spell-16323">Strength</label>
+                        <a href="#strength" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="strength">
+                            <li><a href="https://classic.wowhead.com/item=12451/juju-power"><img src="img/inv_misc_monsterscales_11.jpg" alt="Juju Power"/> Juju Power</a></li>
+                            <li><a href="https://classic.wowhead.com/item=9206/elixir-of-giants"><img src="img/inv_potion_61.jpg" alt="Elixir of Giants"/> Elixir of Giants</a></li>
+                            <li><a href="https://classic.wowhead.com/item=10310/scroll-of-strength-iv"><img src="img/inv_scroll_02.jpg" alt="Scroll of Strength IV"/> Scroll of Strength IV</a></li>
+                        </ul>
+                    </div>
+                    <!--Attack Power-->
+                    <div>
+                        <input type="checkbox" id="spell-16329"/>
+                        <img src="img/inv_misc_monsterscales_07.jpg" alt="Attack Power Consumable" />
+                        <label for="spell-16329">Attack Power</label>
+                        <a href="#attack-power" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="attack-power">
+                            <li><a href="https://classic.wowhead.com/item=12460/juju-might"><img src="img/inv_misc_monsterscales_07.jpg" alt="Juju Might" /> Juju Might</a></li>
+                            <li><a href="https://classic.wowhead.com/item=12820/winterfall-firewater"><img src="img/inv_potion_92.jpg" alt="Juju Might" /> Winterfall Firewater</a></li>
+                        </ul>
+                    </div>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_potion_25.jpg" alt="Spell Power Buffs" /> Spell Power Buffs <a href="#spell-power" data-toggle="collapse">▼</a>
+                        <ul class="collapse sub-section" id="spell-power">
+                            <li>
+                                <input type="checkbox" id="spell-17539"/>
+                                <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir"><img src="img/inv_potion_25.jpg" alt="Greater Arcane Elixir" /></a>
+                                <label for="spell-17539">Greater Arcane Elixir</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-11474"/>
+                                <a href="https://classic.wowhead.com/item=9264/elixir-of-shadow-power"><img src="img/inv_potion_46.jpg" alt="Elixir of Shadow Power" /></a>
+                                <label for="spell-11474">Elixir of Shadow Power</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-26276"/>
+                                <a href="https://classic.wowhead.com/item=21546/elixir-of-greater-firepower"><img src="img/inv_potion_60.jpg" alt="Elixir of Greater Firepower" /></a>
+                                <label for="spell-26276">Elixir of Greater Firepower</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-21920"/>
+                                <a href="https://classic.wowhead.com/item=17708/elixir-of-frost-power"><img src="img/inv_potion_03.jpg" alt="Elixir of Frost Power" /></a>
+                                <label for="spell-21920">Elixir of Frost Power</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-24363"/>
+                        <a href="https://classic.wowhead.com/item=20007/mageblood-potion"><img src="img/inv_potion_45.jpg" alt="Mageblood Potion"/></a>
+                        <label for="spell-24363">Mageblood Potion</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-3593"/>
+                        <a href="https://classic.wowhead.com/item=3825/elixir-of-fortitude"><img src="img/inv_potion_43.jpg" alt="Elixir of Fortitude"/></a>
+                        <label for="spell-3593">Elixir of Fortitude</label>
+                    </div>
+                    <!--Armor Consumable-->
+                    <div>
+                        <input type="checkbox" id="spell-11348"/>
+                        <img src="img/inv_potion_66.jpg" alt="Long-term Armor" />
+                        <label for="spell-11348">Long-term Armor</label>
+                        <a href="#armor-consumable" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="armor-consumable">
+                            <li><a href="https://classic.wowhead.com/item=13445/elixir-of-superior-defense"><img src="img/inv_potion_66.jpg" alt="Elixir of Superior Defense" /> Elixir of Superior Defense</a></li>
+                            <li><a href="https://classic.wowhead.com/item=8951/elixir-of-greater-defense"><img src="img/inv_potion_65.jpg" alt="Elixir of Greater Defense" /> Elixir of Greater Defense</a></li>
+                            <li><a href="https://classic.wowhead.com/item=10305/scroll-of-protection-iv"><img src="img/inv_scroll_07.jpg" alt="Scroll of Protection IV" /> Scroll of Protection IV</a></li>
+                            <li>
+                                <a href="https://classic.wowhead.com/item=11564/crystal-ward"><img src="img/inv_misc_gem_ruby_02.jpg" alt="Crystal Ward" /> Crystal Ward</a>
+                                <small>On the secondary consumable cooldown.</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Health Regeneration-->
+                    <div>
+                        <input type="checkbox" id="spell-24361"/>
+                        <img src="img/inv_potion_80.jpg" alt="Health Regeneration" />
+                        <label for="spell-24361">Health Regeneration</label>
+                        <a href="#health-regeneration" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="health-regeneration">
+                            <li><a href="https://classic.wowhead.com/item=20004/major-trolls-blood-potion"><img src="img/inv_potion_80.jpg" alt="Major Troll's Blood Potion" /> Major Troll's Blood Potion</a></li>
+                            <li><a href="https://classic.wowhead.com/item=3826/mighty-trolls-blood-potion"><img src="img/inv_potion_79.jpg" alt="Mighty Troll's Blood Potion" /> Mighty Troll's Blood Potion</a></li>
+                            <li><a href="https://classic.wowhead.com/item=3388/strong-trolls-blood-potion"><img src="img/inv_potion_78.jpg" alt="Strong Troll's Blood Potion" /> Strong Troll's Blood Potion</a></li>
+                            <li><a href="https://classic.wowhead.com/item=3382/weak-trolls-blood-potion"><img src="img/inv_potion_77.jpg" alt="Weak Troll's Blood Potion" /> Weak Troll's Blood Potion</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-11371"/>
+                        <a href="https://classic.wowhead.com/item=9088/gift-of-arthas"><img src="img/inv_potion_28.jpg" alt="Gift of Arthas"/></a>
+                        <label for="spell-11371">Gift of Arthas</label>
+                    </div>
+                    <!-- Juju Resistance -->
+                    <div>
+                        <input type="checkbox" id="spell-16326"/>
+                        <img src="img/inv_misc_monsterscales_15.jpg" alt="Juju Resistance" />
+                        <label for="spell-16326">Juju Resistance</label>
+                        <a href="#juju-resistance" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="juju-resistance">
+                            <li><a href="https://classic.wowhead.com/item=12455/juju-ember"><img src="img/inv_misc_monsterscales_15.jpg" alt="Juju Ember" /> Juju Ember</a></li>
+                            <li><a href="https://classic.wowhead.com/item=12457/juju-chill"><img src="img/inv_misc_monsterscales_09.jpg" alt="Juju Chill" /> Juju Chill</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-15279"/>
+                        <a href="https://classic.wowhead.com/item=11567/crystal-spire"><img src="img/inv_misc_gem_stone_01.jpg" alt="Crystal Spire"/></a>
+                        <label for="spell-15279">Crystal Spire</label>
+                        <a href="#crystal-spire" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <small class="collapse mb-sm-3" id="crystal-spire">Does not stack with <a href="https://classic.wowhead.com/spell=9910/thorns">Thorns</a>.</small>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-5665"/>
+                        <a href="https://classic.wowhead.com/item=5206/bogling-root"><img src="img/inv_misc_herb_07.jpg" alt="Bogling Root"/></a>
+                        <label for="spell-5665">Bogling Root</label>
+                    </div>
+                    <!--Elemental Absorption-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_potion_24.jpg" alt="Elemental Absorption"/> Elemental Absorption <a href="#elemental-absorption" data-toggle="collapse">▼</a>
+                        <ul class="collapse sub-section" id="elemental-absorption">
+                            <li>
+                                <input type="checkbox" id="spell-17549"/>
+                                <a href="https://classic.wowhead.com/item=13461/greater-arcane-protection-potion"><img src="img/inv_potion_83.jpg" alt="Greater Arcane Protection Potion" /></a>
+                                <label for="spell-17549">Greater Arcane Protection Potion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17543"/>
+                                <a href="https://classic.wowhead.com/item=13457/greater-fire-protection-potion"><img src="img/inv_potion_24.jpg" alt="Greater Fire Protection Potion" /></a>
+                                <label for="spell-17543">Greater Fire Protection Potion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17544"/>
+                                <a href="https://classic.wowhead.com/item=13456/greater-frost-protection-potion"><img src="img/inv_potion_20.jpg" alt="Greater Frost Protection Potion" /></a>
+                                <label for="spell-17544">Greater Frost Protection Potion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17546"/>
+                                <a href="https://classic.wowhead.com/item=13458/greater-nature-protection-potion"><img src="img/inv_potion_22.jpg" alt="Greater Nature Protection Potion" /></a>
+                                <label for="spell-17546">Greater Nature Protection Potion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17548"/>
+                                <a href="https://classic.wowhead.com/item=13459/greater-shadow-protection-potion"><img src="img/inv_potion_23.jpg" alt="Greater Shadow Protection Potion" /></a>
+                                <label for="spell-17548">Greater Shadow Protection Potion</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-18125"/>
+                        <img src="img/spell_misc_food.jpg" alt="Food Buff"/>
+                        <label for="spell-18125">Food</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-25804"/>
+                        <img src="img/inv_drink_04.jpg" alt="Alcohol"/>
+                        <label for="spell-25804">Alcohol</label>
+                        <a href="#alcohol" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="alcohol">
+                            <li><a href="https://classic.wowhead.com/item=18284/kreegs-stout-beatdown"><img src="img/inv_drink_05.jpg" alt="Kreeg's Stout Beatdown" /> Kreeg's Stout Beatdown</a></li>
+                            <li><a href="https://classic.wowhead.com/item=21151/rumsey-rum-black-label"><img src="img/inv_drink_04.jpg" alt="Rumsey Rum Black Label" /> Rumsey Rum Black Label</a></li>
+                            <li><a href="https://classic.wowhead.com/item=18269/gordok-green-grog"><img src="img/inv_drink_03.jpg" alt="Gordok Green Grog" /> Gordok Green Grog</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-17528"/>
+                        <img src="img/inv_potion_41.jpg" alt="Primary Potion"/>
+                        <label for="spell-17528">Primary Potion</label>
+                        <a href="#primary-potion" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="primary-potion">
+                            <li>
+                                <a href="https://classic.wowhead.com/item=9036/magic-resistance-potion"><img src="img/inv_potion_16.jpg" alt="Magic Resistance Potion" /> Magic Resistance Potion</a>
+                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/spell=21850/gift-of-the-wild">Gift of the Wild</a></small>
+                                <small class="indent">or <a class="small-inline" href="https://classic.wowhead.com/spell=10538/fire-resistance-totem">player resistance buffs.</a></small>
+                                <a href="https://classic.wowhead.com/item=9030/restorative-potion"><img src="img/inv_potion_01.jpg" alt="Restorative Potion" /> Restorative Potion</a>
+                                <a href="https://classic.wowhead.com/item=13442/mighty-rage-potion"><img src="img/inv_potion_41.jpg" alt="Mighty Rage Potion" /> Mighty Rage Potion</a>
+                                <a href="https://classic.wowhead.com/item=3387/limited-invulnerability-potion"><img src="img/inv_potion_62.jpg" alt="Limited Invulnerability Potion" /> Limited Invulnerability Potion</a>
+                                <a href="https://classic.wowhead.com/item=20008/living-action-potion"><img src="img/inv_potion_07.jpg" alt="Living Action Potion" /> Living Action Potion</a>
+                                <a href="https://classic.wowhead.com/item=12190/dreamless-sleep-potion"><img src="img/inv_potion_83.jpg" alt="Dreamless Sleep Potion" /> Dreamless Sleep Potion</a>
+                                <a href="https://classic.wowhead.com/item=5634/free-action-potion"><img src="img/inv_potion_04.jpg" alt="Free Action Potion" /> Free Action Potion</a>
+                                <a href="https://classic.wowhead.com/item=2459/swiftness-potion"><img src="img/inv_potion_95.jpg" alt="Swiftness Potion" /> Swiftness Potion</a>
+                                <a href="https://classic.wowhead.com/item=13455/greater-stoneshield-potion"><img src="img/inv_potion_69.jpg" alt="Greater Stoneshield Potion" /> Greater Stoneshield Potion</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-17540"/>
+                        <img src="img/inv_potion_69.jpg" alt="Additional Primary Potion"/>
+                        <label for="spell-17540">Additional Primary Potion</label>
+                        <a href="#additional-primary-potion" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <div class="collapse mb-sm-3" id="additional-primary-potion">
+                            <small class="indent">Primary potion cooldowns elapse while logged off.</small>
+                            <small class="indent">This trick can let you stack primary potions</small>
+                            <small class="indent">despite their cooldown.</small>
                         </div>
-                        <!--Flask-->
-                        <div>
-                            <input type="checkbox" id="spell-17626"/>
-                            <img src="img/inv_potion_62.jpg" alt="Flasks"/>
-                            <label for="spell-17626">Flask of...</label>
-                            <a href="#flasks" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="flasks">
-                                <li><small>Only one of these may be active at one time.</small></li>
-                                <li><small>Persists on death.</small></li>
-                                <li><a href="https://classic.wowhead.com/item=13510/flask-of-the-titans"><img src="img/inv_potion_62.jpg" alt="Flask of the Titans"/> ... the Titans</a></li>
-                                <li><a href="https://classic.wowhead.com/item=13512/flask-of-supreme-power"><img src="img/inv_potion_41.jpg" alt="Flask of Supreme Power"/> ... Supreme Power</a></li>
-                                <li><a href="https://classic.wowhead.com/item=13511/flask-of-distilled-wisdom"><img src="img/inv_potion_97.jpg" alt="Flask of Distilled Wisdom"/> ... Distilled Wisdom</a></li>
-                                <li><a href="https://classic.wowhead.com/item=13513/flask-of-chromatic-resistance"><img src="img/inv_potion_48.jpg" alt="Flask of Chromatic Resistance"/> ... Chromatic Resistance</a></li>
-                                <li><a href="https://classic.wowhead.com/item=13506/flask-of-petrification"><img src="img/inv_potion_26.jpg" alt="Flask of Petrification"/> ... Petrification</a></li>
-                            </ul>
-                        </div>
-                        <!--Zanza-->
-                        <div>
-                            <input type="checkbox" id="spell-24382"/>
-                            <img src="img/inv_misc_coin_08.jpg" alt="Zanza Potion" />
-                            <label for="spell-24382">Zanza Potion</label>
-                            <a href="#zanza" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="zanza">
-                                <li><small>Only one of these may be active at one time.</small></li>
-                                <li>
-                                    <a href="https://classic.wowhead.com/item=20079/spirit-of-zanza"><img src="img/inv_potion_30.jpg" alt="Spirit of Zanza"/> Spirit of Zanza</a>
-                                    <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/item=8411/lung-juice-cocktail">Lung Juice Cocktail</a>.</small>
-                                </li>
-                                <li><a href="https://classic.wowhead.com/item=20081/swiftness-of-zanza"><img src="img/inv_potion_31.jpg" alt="Swiftness of Zanza"/> Swiftness of Zanza</a></li>
-                                <li><a href="https://classic.wowhead.com/item=20080/sheen-of-zanza"><img src="img/inv_potion_29.jpg" alt="Sheen of Zanza"/> Sheen of Zanza</a></li>
-                            </ul>
-                        </div>
-                        <!--Blasted Lands-->
-                        <div>
-                            <input type="checkbox" id="spell-10667"/>
-                            <img src="img/inv_stone_15.jpg" alt="Blasted Lands Consumable"/>
-                            <label for="spell-10667">Blasted Lands Consumable</label>
-                            <a href="#blasted-lands" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="blasted-lands">
-                                <li><small>Only one of these may be active at one time.</small></li>
-                                <li><a href="https://classic.wowhead.com/item=8410/r-o-i-d-s#shared-cooldown"><img src="img/inv_stone_15.jpg" alt="R.O.I.D.S."/> R.O.I.D.S</a></li>
-                                <li><a href="https://classic.wowhead.com/item=8412/ground-scorpok-assay"><img src="img/inv_misc_dust_02.jpg" alt="Ground Scorpok Assay"/> Ground Scorpok Assay</a></li>
-                                <li>
-                                    <a href="https://classic.wowhead.com/item=8411/lung-juice-cocktail"><img src="img/inv_drink_12.jpg" alt="Lung Juice Cocktail"/> Lung Juice Cocktail</a>
-                                    <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/item=20079/spirit-of-zanza">Spirit of Zanza</a>.</small>
-                                </li>
-                                <li><a href="https://classic.wowhead.com/item=8423/cerebral-cortex-compound"><img src="img/inv_potion_32.jpg" alt="Cerebral Cortex Compound"/> Cerebral Cortex Compound</a></li>
-                                <li><a href="https://classic.wowhead.com/item=8424/gizzard-gum"><img src="img/inv_misc_food_30.jpg" alt="Gizzard Gum"/> Gizzard Gum</a></li>
-                            </ul>
-                        </div>
-                        <!--Agility-->
-                        <div>
-                            <input type="checkbox" id="spell-17538"/>
-                            <img src="img/inv_potion_32.jpg" alt="Agility"/>
-                            <label for="spell-17538">Agility</label>
-                            <a href="#agility" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="agility">
-                                <li><a href="https://classic.wowhead.com/item=13452/elixir-of-the-mongoose"><img src="img/inv_potion_32.jpg" alt="Elixir of the Mongoose"/> Elixir of the Mongoose</a></li>
-                                <li><a href="https://classic.wowhead.com/item=9187/elixir-of-greater-agility"><img src="img/inv_potion_94.jpg" alt="Elixir of Greater Agility"/> Elixir of Greater Agility</a></li>
-                                <li><a href="https://classic.wowhead.com/item=10309/scroll-of-agility-iv"><img src="img/inv_scroll_02.jpg" alt="Scroll of Agility IV"/> Scroll of Agility IV</a></li>
-                            </ul>
-                        </div>
-                        <!--Strength-->
-                        <div>
-                            <input type="checkbox" id="spell-16323"/>
-                            <img src="img/inv_misc_monsterscales_11.jpg" alt="Strength Consumable"/>
-                            <label for="spell-16323">Strength</label>
-                            <a href="#strength" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="strength">
-                                <li><a href="https://classic.wowhead.com/item=12451/juju-power"><img src="img/inv_misc_monsterscales_11.jpg" alt="Juju Power"/> Juju Power</a></li>
-                                <li><a href="https://classic.wowhead.com/item=9206/elixir-of-giants"><img src="img/inv_potion_61.jpg" alt="Elixir of Giants"/> Elixir of Giants</a></li>
-                                <li><a href="https://classic.wowhead.com/item=10310/scroll-of-strength-iv"><img src="img/inv_scroll_02.jpg" alt="Scroll of Strength IV"/> Scroll of Strength IV</a></li>
-                            </ul>
-                        </div>
-                        <!--Attack Power-->
-                        <div>
-                            <input type="checkbox" id="spell-16329"/>
-                            <img src="img/inv_misc_monsterscales_07.jpg" alt="Attack Power Consumable" />
-                            <label for="spell-16329">Attack Power</label>
-                            <a href="#attack-power" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="attack-power">
-                                <li><a href="https://classic.wowhead.com/item=12460/juju-might"><img src="img/inv_misc_monsterscales_07.jpg" alt="Juju Might" /> Juju Might</a></li>
-                                <li><a href="https://classic.wowhead.com/item=12820/winterfall-firewater"><img src="img/inv_potion_92.jpg" alt="Juju Might" /> Winterfall Firewater</a></li>
-                            </ul>
-                        </div>
-                        <div class="has-buff-count">
-                            <span class="buff-count">&nbsp;</span>
-                            <img src="img/inv_potion_25.jpg" alt="Greater Arcane Elixir" /> Spell Power Buffs <a href="#spell-power" data-toggle="collapse">▼</a>
-                            <ul class="collapse sub-section" id="spell-power">
-                                <li>
-                                    <input type="checkbox" id="spell-17539"/>
-                                    <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir"><img src="img/inv_potion_25.jpg" alt="Greater Arcane Elixir" /></a>
-                                    <label for="spell-17539">Greater Arcane Elixir</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-11474"/>
-                                    <a href="https://classic.wowhead.com/item=9264/elixir-of-shadow-power"><img src="img/inv_potion_46.jpg" alt="Elixir of Shadow Power" /></a>
-                                    <label for="spell-11474">Elixir of Shadow Power</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-26276"/>
-                                    <a href="https://classic.wowhead.com/item=21546/elixir-of-greater-firepower"><img src="img/inv_potion_60.jpg" alt="Elixir of Greater Firepower" /></a>
-                                    <label for="spell-26276">Elixir of Greater Firepower</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-21920"/>
-                                    <a href="https://classic.wowhead.com/item=17708/elixir-of-frost-power"><img src="img/inv_potion_03.jpg" alt="Elixir of Frost Power" /></a>
-                                    <label for="spell-21920">Elixir of Frost Power</label>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="spell-24363"/>
-                            <a href="https://classic.wowhead.com/item=20007/mageblood-potion"><img src="img/inv_potion_45.jpg" alt="Mageblood Potion"/></a>
-                            <label for="spell-24363">Mageblood Potion</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="spell-3593"/>
-                            <a href="https://classic.wowhead.com/item=3825/elixir-of-fortitude"><img src="img/inv_potion_43.jpg" alt="Elixir of Fortitude"/></a>
-                            <label for="spell-3593">Elixir of Fortitude</label>
-                        </div>
-                        <!--Armor Consumable-->
-                        <div>
-                            <input type="checkbox" id="spell-11348"/>
-                            <img src="img/inv_potion_66.jpg" alt="Long-term Armor" />
-                            <label for="spell-11348">Long-term Armor</label>
-                            <a href="#armor-consumable" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="armor-consumable">
-                                <li><a href="https://classic.wowhead.com/item=13445/elixir-of-superior-defense"><img src="img/inv_potion_66.jpg" alt="Elixir of Superior Defense" /> Elixir of Superior Defense</a></li>
-                                <li><a href="https://classic.wowhead.com/item=8951/elixir-of-greater-defense"><img src="img/inv_potion_65.jpg" alt="Elixir of Greater Defense" /> Elixir of Greater Defense</a></li>
-                                <li><a href="https://classic.wowhead.com/item=10305/scroll-of-protection-iv"><img src="img/inv_scroll_07.jpg" alt="Scroll of Protection IV" /> Scroll of Protection IV</a></li>
-                                <li>
-                                    <a href="https://classic.wowhead.com/item=11564/crystal-ward"><img src="img/inv_misc_gem_ruby_02.jpg" alt="Crystal Ward" /> Crystal Ward</a>
-                                    <small>On the combat consumable cooldown.</small>
-                                </li>
-                            </ul>
-                        </div>
-                        <!--Health Regeneration-->
-                        <div>
-                            <input type="checkbox" id="spell-24361"/>
-                            <img src="img/inv_potion_80.jpg" alt="Health Regeneration" />
-                            <label for="spell-24361">Health Regeneration</label>
-                            <a href="#health-regeneration" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="health-regeneration">
-                                <li><a href="https://classic.wowhead.com/item=20004/major-trolls-blood-potion"><img src="img/inv_potion_80.jpg" alt="Major Troll's Blood Potion" /> Major Troll's Blood Potion</a></li>
-                                <li><a href="https://classic.wowhead.com/item=3826/mighty-trolls-blood-potion"><img src="img/inv_potion_79.jpg" alt="Mighty Troll's Blood Potion" /> Mighty Troll's Blood Potion</a></li>
-                                <li><a href="https://classic.wowhead.com/item=3388/strong-trolls-blood-potion"><img src="img/inv_potion_78.jpg" alt="Strong Troll's Blood Potion" /> Strong Troll's Blood Potion</a></li>
-                                <li><a href="https://classic.wowhead.com/item=3382/weak-trolls-blood-potion"><img src="img/inv_potion_77.jpg" alt="Weak Troll's Blood Potion" /> Weak Troll's Blood Potion</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="spell-11371"/>
-                            <a href="https://classic.wowhead.com/item=9088/gift-of-arthas"><img src="img/inv_potion_28.jpg" alt="Gift of Arthas"/></a>
-                            <label for="spell-11371">Gift of Arthas</label>
-                        </div>
-                        <!-- Juju Resistance -->
-                        <div>
-                            <input type="checkbox" id="spell-16326"/>
-                            <img src="img/inv_misc_monsterscales_15.jpg" alt="Juju Resistance" />
-                            <label for="spell-16326">Juju Resistance</label>
-                            <a href="#juju-resistance" data-toggle="collapse">▼</a>
-                            <ul class="collapse mb-sm-3" id="juju-resistance">
-                                <li><a href="https://classic.wowhead.com/item=12455/juju-ember"><img src="img/inv_misc_monsterscales_15.jpg" alt="Juju Ember" /> Juju Ember</a></li>
-                                <li><a href="https://classic.wowhead.com/item=12457/juju-chill"><img src="img/inv_misc_monsterscales_09.jpg" alt="Juju Chill" /> Juju Chill</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="spell-15279"/>
-                            <a href="https://classic.wowhead.com/item=11567/crystal-spire"><img src="img/inv_misc_gem_stone_01.jpg" alt="Crystal Spire"/></a>
-                            <label for="spell-15279">Crystal Spire</label>
-                            <a href="#crystal-spire" data-toggle="collapse">▼</a>
-                            <small class="collapse mb-sm-3" id="crystal-spire">Does not stack with <a href="https://classic.wowhead.com/spell=9910/thorns">Thorns</a>.</small>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="spell-5665"/>
-                            <a href="https://classic.wowhead.com/item=5206/bogling-root"><img src="img/inv_misc_herb_07.jpg" alt="Bogling Root"/></a>
-                            <label for="spell-5665">Bogling Root</label>
-                        </div>
-                        <!--Elemental Absorption-->
-                        <div class="has-buff-count">
-                            <span class="buff-count">&nbsp;</span>
-                            <img src="img/inv_potion_24.jpg" alt="Elemental Absorption"/> Elemental Absorption <a href="#elemental-absorption" data-toggle="collapse">▼</a>
-                            <ul class="collapse sub-section" id="elemental-absorption">
-                                <li>
-                                    <input type="checkbox" id="spell-17549"/>
-                                    <a href="https://classic.wowhead.com/item=13461/greater-arcane-protection-potion"><img src="img/inv_potion_83.jpg" alt="Greater Arcane Protection Potion" /></a>
-                                    <label for="spell-17549">Greater Arcane Protection Potion</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-17543"/>
-                                    <a href="https://classic.wowhead.com/item=13457/greater-fire-protection-potion"><img src="img/inv_potion_24.jpg" alt="Greater Fire Protection Potion" /></a>
-                                    <label for="spell-17543">Greater Fire Protection Potion</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-17544"/>
-                                    <a href="https://classic.wowhead.com/item=13456/greater-frost-protection-potion"><img src="img/inv_potion_20.jpg" alt="Greater Frost Protection Potion" /></a>
-                                    <label for="spell-17544">Greater Frost Protection Potion</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-17546"/>
-                                    <a href="https://classic.wowhead.com/item=13458/greater-nature-protection-potion"><img src="img/inv_potion_22.jpg" alt="Greater Nature Protection Potion" /></a>
-                                    <label for="spell-17546">Greater Nature Protection Potion</label>
-                                </li>
-                                <li>
-                                    <input type="checkbox" id="spell-17548"/>
-                                    <a href="https://classic.wowhead.com/item=13459/greater-shadow-protection-potion"><img src="img/inv_potion_23.jpg" alt="Greater Shadow Protection Potion" /></a>
-                                    <label for="spell-17548">Greater Shadow Protection Potion</label>
-                                </li>
-                            </ul>
-                        </div>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-11350"/>
+                        <a href="https://classic.wowhead.com/item=8956/oil-of-immolation"><img src="img/inv_potion_11.jpg" alt="Oil of Immolation"/></a>
+                        <label for="spell-11350">Oil of Immolation</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-15852"/>
+                        <a href="https://classic.wowhead.com/item=12217/dragonbreath-chili"><img src="img/inv_drink_17.jpg" alt="Dragonbreath Chili"/></a>
+                        <label for="spell-15852">Dragonbreath Chili</label>
+                        <a href="#dragonbreath-chili" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <small class="collapse mb-sm-3" id="dragonbreath-chili">Does not stack with Food buffs.</small>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-15851"/>
+                        <a href="https://classic.wowhead.com/spell=15852/dragonbreath-chili"><img src="img/spell_fire_incinerate.jpg" alt="Dragonbreath Chili Proc"/></a>
+                        <label for="spell-15851">Dragonbreath Chili Proc</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-18610"/>
+                        <a href="https://classic.wowhead.com/item=14530/heavy-runecloth-bandage"><img src="img/spell_holy_heal.jpg" alt="First Aid"/></a>
+                        <label for="spell-18610">First Aid</label>
+                    </div>
+                </div>
+                <!--Raid Buffs-->
+                <div class="col-sm-auto border mr-sm-3 float-left bc-cell">
+                    <div class="bc-cell-header m-sm-1">
+                        <span class="h4">Raid Buffs</span>
+                        <button class="ml-3 btn-sm btn-secondary">Clear</button>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-11551"/>
+                        <a href="https://classic.wowhead.com/spell=11551/battle-shout" data-wowhead="buff"><img src="img/ability_warrior_battleshout.jpg" alt="Battle Shout"/></a>
+                        <label for="spell-11551" class="warrior-color">Battle Shout</label>
+                    </div>
+                    <!--Druid Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_druid.jpg" alt="Druid Buffs" /> <span class="druid-color">Druid Buffs</span> <a href="#druid-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="druid-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-21850"/>
+                                <a href="https://classic.wowhead.com/spell=21850/gift-of-the-wild" data-wowhead="buff"><img src="img/spell_nature_regeneration.jpg" alt="Gift of the Wild"/></a>
+                                <label for="spell-21850" class="druid-color">Gift of the Wild</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-24932"/>
+                                <a href="https://classic.wowhead.com/spell=24932/leader-of-the-pack" data-wowhead="buff"><img src="img/spell_nature_unyeildingstamina.jpg" alt="Leader of the Pack"/></a>
+                                <label for="spell-24932" class="druid-color">Leader of the Pack</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-9910"/>
+                                <a href="https://classic.wowhead.com/spell=9910/thorns" data-wowhead="buff"><img src="img/spell_nature_thorns.jpg" alt="Thorns"/></a>
+                                <label for="spell-9910" class="druid-color">Thorns</label>
+                                <a href="#thorns" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                                <small class="collapse mb-sm-3" id="thorns">Does not stack with <a href="https://classic.wowhead.com/item=11567/crystal-spire">Crystal Spire</a>.</small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-9841"/>
+                                <a href="https://classic.wowhead.com/spell=9841/rejuvenation" data-wowhead="buff"><img src="img/spell_nature_rejuvenation.jpg" alt="Rejuvenation"/></a>
+                                <label for="spell-9841" class="druid-color">Rejuvenation</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-9858"/>
+                                <a href="https://classic.wowhead.com/spell=9858/regrowth" data-wowhead="buff"><img src="img/spell_nature_resistnature.jpg" alt="Regrowth"/></a>
+                                <label for="spell-9858" class="druid-color">Regrowth</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-9863"/>
+                                <a href="https://classic.wowhead.com/spell=9863/tranquility" data-wowhead="buff"><img src="img/spell_nature_tranquility.jpg" alt="Tranquility"/></a>
+                                <label for="spell-9863" class="druid-color">Tranquility</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Hunter Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_hunter.jpg" alt="Hunter Buffs" /> <span class="hunter-color">Hunter Buffs</span> <a href="#hunter-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="hunter-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-20190"/>
+                                <img src="img/spell_nature_protectionformnature.jpg" alt="Hunter Aspect"/>
+                                <label for="spell-20190" class="hunter-color">Hunter Aspect</label>
+                                <a href="#hunter-aspect" data-toggle="collapse">▼</a>
+                                <ul class="collapse mb-sm-3" id="hunter-aspect">
+                                    <li><a class="hunter-color" href="https://classic.wowhead.com/spell=20190/aspect-of-the-wild"><img src="img/spell_nature_protectionformnature.jpg" alt="Aspect of the Wild"/> Aspect of the Wild</a></li>
+                                    <li><a class="hunter-color" href="https://classic.wowhead.com/spell=13159/aspect-of-the-pack"><img src="img/ability_mount_whitetiger.jpg" alt="Aspect of the Pack"/> Aspect of the Pack</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-20906"/>
+                                <a href="https://classic.wowhead.com/spell=20906/trueshot-aura" data-wowhead="buff"><img src="img/ability_trueshot.jpg" alt="Trueshot Aura"/></a>
+                                <label for="spell-20906" class="hunter-color">Trueshot Aura</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-24597"/>
+                                <a href="https://classic.wowhead.com/spell=24597/furious-howl" data-wowhead="buff"><img src="img/ability_hunter_pet_wolf.jpg" alt="Furious Howl"/></a>
+                                <label for="spell-24597" class="hunter-color">Furious Howl</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Mage Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_mage.jpg" alt="Mage Buffs" /> <span class="mage-color">Mage Buffs</span> <a href="#mage-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="mage-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-23028"/>
+                                <a href="https://classic.wowhead.com/spell=23028/arcane-brilliance" data-wowhead="buff"><img src="img/spell_holy_arcaneintellect.jpg" alt="Arcane Brilliance"/></a>
+                                <label for="spell-23028" class="mage-color">Arcane Brilliance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10170"/>
+                                <a href="https://classic.wowhead.com/spell=10170/amplify-magic" data-wowhead="buff"><img src="img/spell_holy_flashheal.jpg" alt="Amplify Magic"/></a>
+                                <label for="spell-10170" class="mage-color">Amplify Magic</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10174"/>
+                                <a href="https://classic.wowhead.com/spell=10174/dampen-magic" data-wowhead="buff"><img src="img/spell_nature_abolishmagic.jpg" alt="Dampen Magic"/></a>
+                                <label for="spell-10174" class="mage-color">Dampen Magic</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Priest Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_priest.jpg" alt="Priest Buffs" /> <span class="priest-color">Priest Buffs</span> <a href="#priest-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="priest-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-21564"/>
+                                <a href="https://classic.wowhead.com/spell=21564/prayer-of-fortitude" data-wowhead="buff"><img src="img/spell_holy_prayeroffortitude.jpg" alt="Prayer of Fortitude"/></a>
+                                <label for="spell-21564" class="priest-color">Prayer of Fortitude</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-27681"/>
+                                <a href="https://classic.wowhead.com/spell=27681/prayer-of-spirit" data-wowhead="buff"><img src="img/spell_holy_prayerofspirit.jpg" alt="Prayer of Spirit"/></a>
+                                <label for="spell-27681" class="priest-color">Prayer of Spirit</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10958"/>
+                                <a href="https://classic.wowhead.com/spell=10958/shadow-protection" data-wowhead="buff"><img src="img/spell_shadow_antishadow.jpg" alt="Shadow Protection"/></a>
+                                <label for="spell-10958" class="priest-color">Shadow Protection</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10060"/>
+                                <a href="https://classic.wowhead.com/spell=10060/power-infusion" data-wowhead="buff"><img src="img/spell_holy_powerinfusion.jpg" alt="Power Infusion"/></a>
+                                <label for="spell-10060" class="priest-color">Power Infusion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-6346"/>
+                                <a href="https://classic.wowhead.com/spell=6346/fear-ward" data-wowhead="buff"><img src="img/spell_holy_excorcism.jpg" alt="Fear Ward"/></a>
+                                <label for="spell-6346" class="priest-color">Fear Ward</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10901"/>
+                                <a href="https://classic.wowhead.com/spell=10901/power-word-shield" data-wowhead="buff"><img src="img/spell_holy_powerwordshield.jpg" alt="Power Word: Shield"/></a>
+                                <label for="spell-10901" class="priest-color">Power Word: Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10929"/>
+                                <a href="https://classic.wowhead.com/spell=10929/renew" data-wowhead="buff"><img src="img/spell_holy_renew.jpg" alt="Renew"/></a>
+                                <label for="spell-10929" class="priest-color">Renew</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-27874"/>
+                                <a href="https://classic.wowhead.com/spell=27874/lightwell-renew" data-wowhead="buff"><img src="img/spell_holy_summonlightwell.jpg" alt="Lightwell Renew"/></a>
+                                <label for="spell-27874" class="priest-color">Lightwell Renew</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-22010"/>
+                                <a href="https://classic.wowhead.com/spell=22010/greater-heal-renew"><img src="img/inv_gauntlets_14.jpg" alt="8/8 T2 Proc"/></a>
+                                <label for="spell-22010" class="priest-color">8/8 T2 Proc</label>
+                                <a href="#transcendence" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                                <small class="collapse mb-sm-3" id="transcendence">Stacking with casted renew is unknown.<br />Please contact Querns in FC if<br/>you can help determine this.</small>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Warlock Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_warlock.jpg" alt="Warlock Buffs" /> <span class="warlock-color">Warlock Buffs</span> <a href="#warlock-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="warlock-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-11767"/>
+                                <img src="img/spell_shadow_bloodboil.jpg" alt="Warlock Pet Aura"/>
+                                <label for="spell-11767" class="warlock-color">Warlock Pet Aura</label>
+                                <a href="#warlock-pet-aura" data-toggle="collapse">▼</a>
+                                <ul class="collapse mb-sm-3" id="warlock-pet-aura">
+                                    <li><a href="https://classic.wowhead.com/spell=11767/blood-pact" class="warlock-color" data-wowhead="buff"><img src="img/spell_shadow_bloodboil.jpg" alt="Blood Pact" /> Blood Pact</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=19480/paranoia" class="warlock-color" data-wowhead="buff"><img src="img/spell_shadow_auraofdarkness.jpg" alt="Paranoia" /> Paranoia</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-11771"/>
+                                <a href="https://classic.wowhead.com/spell=11771/fire-shield" data-wowhead="buff"><img src="img/spell_fire_firearmor.jpg" alt="Fire Shield"/></a>
+                                <label for="spell-11771" class="warlock-color">Fire Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-5697"/>
+                                <a href="https://classic.wowhead.com/spell=5697/unending-breath" data-wowhead="buff"><img src="img/spell_shadow_demonbreath.jpg" alt="Unending Breath"/></a>
+                                <label for="spell-5697" class="warlock-color">Unending Breath</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-11743"/>
+                                <a href="https://classic.wowhead.com/spell=11743/detect-greater-invisibility" data-wowhead="buff"><img src="img/spell_shadow_detectinvisibility.jpg" alt="Detect Invisibility"/></a>
+                                <label for="spell-11743" class="warlock-color">Detect Invisibility</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-15359"/>
+                        <img src="img/inv_shield_06.jpg" alt="Armor Buff"/>
+                        <label for="spell-15359"><span class="priest-color">Armor</span> <span class="shaman-color">Buff</span></label>
+                        <a href="#armor-buff" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3" id="armor-buff">
+                            <li><a href="https://classic.wowhead.com/spell=15359/inspiration" class="priest-color" data-wowhead="buff"><img src="img/inv_shield_06.jpg" alt="Inspiration" /> Inspiration</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=16237/ancestral-fortitude" class="shaman-color" data-wowhead="buff"><img src="img/spell_nature_undyingstrength.jpg" alt="Ancestral Fortitude" /> Ancestral Fortitude</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-29203"/>
+                        <a href="https://classic.wowhead.com/spell=29203/healing-way" data-wowhead="buff"><img src="img/classic_spell_nature_healingway.jpg" alt="Healing Way"/></a>
+                        <label for="spell-29203" class="shaman-color">Healing Way</label>
+                    </div>
+                    <!--Shaman Totems-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/spell_totem_wardofdraining.jpg" alt="Shaman Totems" /> <span class="shaman-color">Shaman Totems</span> <a href="#shaman-totems" data-toggle="collapse">▼</a>
+                        <ul class="collapse sub-section" id="shaman-totems">
+                            <li>
+                                <input type="checkbox" id="spell-10441" data-exclusive="earth-totem" />
+                                <a href="https://classic.wowhead.com/spell=10441/strength-of-earth" data-wowhead="buff"><img src="img/spell_nature_earthbindtotem.jpg" alt="Strength of Earth" /></a>
+                                <label for="spell-10441" class="warrior-color">Strength of Earth</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10405" data-exclusive="earth-totem" />
+                                <a href="https://classic.wowhead.com/spell=10405/stoneskin" data-wowhead="buff"><img src="img/spell_nature_stoneskintotem.jpg" alt="Stoneskin" /></a>
+                                <label for="spell-10405" class="warrior-color">Stoneskin</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10477" data-exclusive="fire-totem" />
+                                <a href="https://classic.wowhead.com/spell=10477/frost-resistance" data-wowhead="buff"><img src="img/spell_frostresistancetotem_01.jpg" alt="Frost Resistance" /></a>
+                                <label for="spell-10477" class="fire-totem-color">Frost Resistance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25360" data-exclusive="air-totem" />
+                                <a href="https://classic.wowhead.com/spell=25360/grace-of-air" data-wowhead="buff"><img src="img/spell_nature_invisibilitytotem.jpg" alt="Grace of Air" /></a>
+                                <label for="spell-25360" class="priest-color">Grace of Air</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10599" data-exclusive="air-totem" />
+                                <a href="https://classic.wowhead.com/spell=10599/nature-resistance" data-wowhead="buff"><img src="img/spell_nature_natureresistancetotem.jpg" alt="Nature Resistance" /></a>
+                                <label for="spell-10599" class="priest-color">Nature Resistance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-8178" data-exclusive="air-totem" />
+                                <a href="https://classic.wowhead.com/spell=8178/grounding-totem-effect" data-wowhead="buff"><img src="img/spell_nature_groundingtotem.jpg" alt="Grounding" /></a>
+                                <label for="spell-8178" class="priest-color">Grounding</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25909" data-exclusive="air-totem" />
+                                <a href="https://classic.wowhead.com/spell=25909/tranquil-air" data-wowhead="buff"><img src="img/spell_nature_brilliance.jpg" alt="Tranquil Air" /></a>
+                                <label for="spell-25909" class="priest-color">Tranquil Air</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10535" data-exclusive="water-totem" />
+                                <a href="https://classic.wowhead.com/spell=10535/fire-resistance" data-wowhead="buff"><img src="img/spell_fireresistancetotem_01.jpg" alt="Fire Resistance" /></a>
+                                <label for="spell-10535" class="mage-color">Fire Resistance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10461" data-exclusive="water-totem" />
+                                <a href="https://classic.wowhead.com/spell=10461/healing-stream" data-wowhead="buff"><img src="img/inv_spear_04.jpg" alt="Healing Stream" /></a>
+                                <label for="spell-10461" class="mage-color">Healing Stream</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10494" data-exclusive="water-totem" />
+                                <a href="https://classic.wowhead.com/spell=10494/mana-spring" data-wowhead="buff"><img src="img/spell_nature_manaregentotem.jpg" alt="Mana Spring" /></a>
+                                <label for="spell-10494" class="mage-color">Mana Spring</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17360" data-exclusive="water-totem" />
+                                <a href="https://classic.wowhead.com/spell=17360/mana-tide" data-wowhead="buff"><img src="img/spell_frost_summonwaterelemental.jpg" alt="Mana Tide" /></a>
+                                <label for="spell-17360" class="mage-color">Mana Tide</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Paladin Auras-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/spell_holy_devotionaura.jpg" alt="Paladin Auras" /> <span class="paladin-color">Paladin Auras</span> <a href="#paladin-auras" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="paladin-auras">
+                            <li>
+                                <input type="checkbox" id="spell-19746"/>
+                                <a href="https://classic.wowhead.com/spell=19746/concentration-aura" data-wowhead="buff"><img src="img/spell_holy_mindsooth.jpg" alt="Concentration"/></a>
+                                <label for="spell-19746" class="paladin-color">Concentration</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10293"/>
+                                <a href="https://classic.wowhead.com/spell=10293/devotion-aura" data-wowhead="buff"><img src="img/spell_holy_devotionaura.jpg" alt="Devotion"/></a>
+                                <label for="spell-10293" class="paladin-color">Devotion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19900"/>
+                                <a href="https://classic.wowhead.com/spell=19900/fire-resistance-aura" data-wowhead="buff"><img src="img/spell_fire_sealoffire.jpg" alt="Fire Resistance"/></a>
+                                <label for="spell-19900" class="paladin-color">Fire Resistance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19898"/>
+                                <a href="https://classic.wowhead.com/spell=19898/frost-resistance-aura" data-wowhead="buff"><img src="img/spell_frost_wizardmark.jpg" alt="Frost Resistance"/></a>
+                                <label for="spell-19898" class="paladin-color">Frost Resistance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10299"/>
+                                <a href="https://classic.wowhead.com/spell=10299/retribution-aura" data-wowhead="buff"><img src="img/spell_holy_auraoflight.jpg" alt="Retribution"/></a>
+                                <label for="spell-10299" class="paladin-color">Retribution</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19896"/>
+                                <a href="https://classic.wowhead.com/spell=19896/shadow-resistance-aura" data-wowhead="buff"><img src="img/spell_shadow_sealofkings.jpg" alt="Shadow Resistance"/></a>
+                                <label for="spell-19896" class="paladin-color">Shadow Resistance</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Paladin Blessings-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/spell_magic_greaterblessingofkings.jpg" alt="Paladin Blessings" /> <span class="paladin-color">Paladin Blessings</span> <a href="#paladin-blessings" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="paladin-blessings">
+                            <li>
+                                <input type="checkbox" id="spell-25898"/>
+                                <a href="https://classic.wowhead.com/spell=25898/greater-blessing-of-kings" data-wowhead="buff"><img src="img/spell_magic_greaterblessingofkings.jpg" alt="Kings"/></a>
+                                <label for="spell-25898" class="paladin-color">Kings</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25890"/>
+                                <a href="https://classic.wowhead.com/spell=25890/greater-blessing-of-light" data-wowhead="buff"><img src="img/spell_holy_greaterblessingoflight.jpg" alt="Light"/></a>
+                                <label for="spell-25890" class="paladin-color">Light</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25916"/>
+                                <a href="https://classic.wowhead.com/spell=25916/greater-blessing-of-might" data-wowhead="buff"><img src="img/spell_holy_greaterblessingofkings.jpg" alt="Might"/></a>
+                                <label for="spell-25916" class="paladin-color">Might</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25895"/>
+                                <a href="https://classic.wowhead.com/spell=25895/greater-blessing-of-salvation" data-wowhead="buff"><img src="img/spell_holy_greaterblessingofsalvation.jpg" alt="Salvation"/></a>
+                                <label for="spell-25895" class="paladin-color">Salvation</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25899"/>
+                                <a href="https://classic.wowhead.com/spell=25899/greater-blessing-of-sanctuary" data-wowhead="buff"><img src="img/spell_holy_greaterblessingofsanctuary.jpg" alt="Sanctuary"/></a>
+                                <label for="spell-25899" class="paladin-color">Sanctuary</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25918"/>
+                                <a href="https://classic.wowhead.com/spell=25918/greater-blessing-of-wisdom" data-wowhead="buff"><img src="img/spell_holy_greaterblessingofwisdom.jpg" alt="Wisdom"/></a>
+                                <label for="spell-25918" class="paladin-color">Wisdom</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1044"/>
+                                <a href="https://classic.wowhead.com/spell=1044/blessing-of-freedom" data-wowhead="buff"><img src="img/spell_holy_sealofvalor.jpg" alt="Freedom"/></a>
+                                <label for="spell-1044" class="paladin-color">Freedom</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-20729"/>
+                                <a href="https://classic.wowhead.com/spell=20729/blessing-of-sacrifice" data-wowhead="buff"><img src="img/spell_holy_sealofsacrifice.jpg" alt="Sacrifice"/></a>
+                                <label for="spell-20729" class="paladin-color">Sacrifice</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-5599"/>
+                                <a href="https://classic.wowhead.com/spell=5599/blessing-of-protection" data-wowhead="buff"><img src="img/spell_holy_sealofprotection.jpg" alt="Protection"/></a>
+                                <label for="spell-5599" class="paladin-color">Protection</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-15123"/>
+                        <a href="https://classic.wowhead.com/spell=15123/resist-fire" data-wowhead="buff&amp;lvl=55"><img src="img/spell_fire_firearmor.jpg" alt="Resist Fire"/></a>
+                        <label for="spell-15123">Resist Fire</label>
+                        <a href="#resist-fire" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <small class="collapse mb-sm-3" id="resist-fire">
+                            Gives 81-83 fire resistance.<br />
+                            Stacks with <a href="https://classic.wowhead.com/spell=10535/fire-resistance" data-wowhead="buff">totem</a>/<a href="https://classic.wowhead.com/spell=19900/fire-resistance-aura" data-wowhead="buff">aura</a>
+                            and <a href="https://classic.wowhead.com/item=12455/juju-ember">Juju Ember</a>.<br />
+                            Mind control a <a href="https://classic.wowhead.com/npc=9098/scarshield-spellbinder">Scarshield Spellbinder</a> in UBRS.
+                        </small>
                     </div>
                 </div>
             </div>
-            <div class="col-sm-auto">
-
-            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="main.js" type="text/javascript"></script>
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="main.js" type="text/javascript"></script>
 </body>
 </html>

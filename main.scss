@@ -24,7 +24,7 @@ small {
   display: block;
 }
 
-a + small {
+a + small, small.indent {
   padding-left: 1.5rem;
 }
 
@@ -63,4 +63,48 @@ label, small {
 
 .has-buff-count {
   min-height: 30px;
+}
+
+.warrior-color {
+  color: #C79C6E;
+}
+
+.druid-color {
+  color: #FF7D0A;
+}
+
+.hunter-color {
+  color: #ABD473;
+}
+
+.mage-color {
+  color: #69CCF0;
+}
+
+.paladin-color {
+  color: #F58CBA;
+}
+
+.priest-color {
+  color: #FFFFFF;
+}
+
+.rogue-color {
+  color: #FFF569;
+}
+
+.shaman-color {
+  color: #0070DE;
+}
+
+.warlock-color {
+  color: #9482C9;
+}
+
+.fire-totem-color {
+  color: #ff4b19;
+}
+
+body {
+  padding-top: 4.5rem;
 }
