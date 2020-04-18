@@ -99,10 +99,8 @@ String.prototype.capitalize = function() {
 
     $(".bc-cell-header button").click(e => {
         $(e.currentTarget).closest(".bc-cell")
-            .find("input[type='checkbox']").prop("checked", false)
-            .end()
-            .find(".buff-count").text("")
-            .end()
+            .find("input[type='checkbox']").prop("checked", false).end()
+            .find(".buff-count").text("").end()
             .find(".buff-summary").empty();
 
         if ($(e.currentTarget).closest(".bc-cell").attr("id") === "personal-buffs") {
