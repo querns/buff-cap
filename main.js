@@ -94,6 +94,7 @@ String.prototype.capitalize = function() {
         $("input[type='checkbox']").prop("checked", false);
         calculateTotalBuffs();
         $(".buff-count").text("");
+        $(".buff-summary").empty();
     });
 
     $(".bc-cell-header button").click(e => {
