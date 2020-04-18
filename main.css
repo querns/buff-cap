@@ -22,8 +22,12 @@ small {
   display: block;
 }
 
-a + small, small.indent {
+a + small, .indent, .buff-summary {
   padding-left: 1.5rem;
+}
+
+.buff-summary img {
+  margin-right: 5px;
 }
 
 ul:not(.sub-section) li a:not(.small-inline) {
@@ -34,6 +38,9 @@ input[type=checkbox] {
   transform: scale(1.25);
   margin-right: 0.5rem;
   vertical-align: middle;
+}
+input[type=checkbox]:not(:checked) {
+  opacity: 0.25;
 }
 
 label, small {
@@ -106,10 +113,10 @@ body {
   padding-bottom: 4.5rem;
 }
 
-#copy-toast {
+.toast {
   border: 1px solid gray;
   z-index: 99999;
-  position: absolute;
+  position: fixed;
   top: 20px;
   right: 20px;
 }

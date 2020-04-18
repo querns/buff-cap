@@ -294,6 +294,7 @@
                                 <label for="spell-21920">Elixir of Frost Power</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-24363"/>
@@ -354,8 +355,8 @@
                         <input type="checkbox" id="spell-15279"/>
                         <a href="https://classic.wowhead.com/item=11567/crystal-spire"><img src="img/inv_misc_gem_stone_01.jpg" alt="Crystal Spire"/></a>
                         <label for="spell-15279">Crystal Spire</label>
-                        <a href="#crystal-spire" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
-                        <small class="collapse mb-sm-3" id="crystal-spire">Does not stack with <a href="https://classic.wowhead.com/spell=9910/thorns">Thorns</a>.</small>
+                        <a href="#crystal-spire" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="crystal-spire">Does not stack with <a href="https://classic.wowhead.com/spell=9910/thorns" data-wowhead="buff">Thorns</a>.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-5665"/>
@@ -393,6 +394,7 @@
                                 <label for="spell-17548">Greater Shadow Protection Potion</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-18125"/>
@@ -418,8 +420,8 @@
                         <ul class="collapse mb-sm-3" id="primary-potion">
                             <li>
                                 <a href="https://classic.wowhead.com/item=9036/magic-resistance-potion"><img src="img/inv_potion_16.jpg" alt="Magic Resistance Potion" /> Magic Resistance Potion</a>
-                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/spell=21850/gift-of-the-wild">Gift of the Wild</a></small>
-                                <small class="indent">or <a class="small-inline" href="https://classic.wowhead.com/spell=10538/fire-resistance-totem">player resistance buffs.</a></small>
+                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/spell=21850/gift-of-the-wild" data-wowhead="buff">Gift of the Wild</a></small>
+                                <small class="indent">or <a class="small-inline" href="https://classic.wowhead.com/spell=10535/fire-resistance" data-wowhead="buff">player resistance buffs.</a></small>
                                 <a href="https://classic.wowhead.com/item=9030/restorative-potion"><img src="img/inv_potion_01.jpg" alt="Restorative Potion" /> Restorative Potion</a>
                                 <a href="https://classic.wowhead.com/item=13442/mighty-rage-potion"><img src="img/inv_potion_41.jpg" alt="Mighty Rage Potion" /> Mighty Rage Potion</a>
                                 <a href="https://classic.wowhead.com/item=3387/limited-invulnerability-potion"><img src="img/inv_potion_62.jpg" alt="Limited Invulnerability Potion" /> Limited Invulnerability Potion</a>
@@ -435,7 +437,7 @@
                         <input type="checkbox" id="spell-17540"/>
                         <img src="img/inv_potion_69.jpg" alt="Additional Primary Potion"/>
                         <label for="spell-17540">Additional Primary Potion</label>
-                        <a href="#additional-primary-potion" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <a href="#additional-primary-potion" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <div class="collapse mb-sm-3" id="additional-primary-potion">
                             <small class="indent">Primary potion cooldowns elapse while logged off.</small>
                             <small class="indent">This trick can let you stack primary potions</small>
@@ -451,8 +453,8 @@
                         <input type="checkbox" id="spell-15852"/>
                         <a href="https://classic.wowhead.com/item=12217/dragonbreath-chili"><img src="img/inv_drink_17.jpg" alt="Dragonbreath Chili"/></a>
                         <label for="spell-15852">Dragonbreath Chili</label>
-                        <a href="#dragonbreath-chili" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
-                        <small class="collapse mb-sm-3" id="dragonbreath-chili">Does not stack with Food buffs.</small>
+                        <a href="#dragonbreath-chili" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="dragonbreath-chili">Stacks with food buff, but only if<br/>you eat chili second.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-15851"/>
@@ -495,8 +497,8 @@
                                 <input type="checkbox" id="spell-9910"/>
                                 <a href="https://classic.wowhead.com/spell=9910/thorns" data-wowhead="buff"><img src="img/spell_nature_thorns.jpg" alt="Thorns"/></a>
                                 <label for="spell-9910" class="druid-color">Thorns</label>
-                                <a href="#thorns" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
-                                <small class="collapse mb-sm-3" id="thorns">Does not stack with <a href="https://classic.wowhead.com/item=11567/crystal-spire">Crystal Spire</a>.</small>
+                                <a href="#thorns" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="thorns">Does not stack with <a href="https://classic.wowhead.com/item=11567/crystal-spire" data-info>Crystal Spire</a>.</small>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-9841"/>
@@ -514,6 +516,7 @@
                                 <label for="spell-9863" class="druid-color">Tranquility</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Hunter Buffs-->
                     <div class="has-buff-count">
@@ -541,6 +544,7 @@
                                 <label for="spell-24597" class="hunter-color">Furious Howl</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Mage Buffs-->
                     <div class="has-buff-count">
@@ -563,6 +567,7 @@
                                 <label for="spell-10174" class="mage-color">Dampen Magic</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Priest Buffs-->
                     <div class="has-buff-count">
@@ -613,10 +618,11 @@
                                 <input type="checkbox" id="spell-22010"/>
                                 <a href="https://classic.wowhead.com/spell=22009/greater-heal" data-wowhead="buff"><img src="img/inv_gauntlets_14.jpg" alt="8/8 T2 Proc"/></a>
                                 <label for="spell-22010" class="priest-color">8/8 T2 Proc</label>
-                                <a href="#transcendence" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                                <a href="#transcendence" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                                 <small class="collapse mb-sm-3" id="transcendence">Stacks with <a href="https://classic.wowhead.com/spell=10929/renew" data-wowhead="buff">Renew.</a></small>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Warlock Buffs-->
                     <div class="has-buff-count">
@@ -649,6 +655,7 @@
                                 <label for="spell-11743" class="warlock-color">Detect Invisibility</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-15359"/>
@@ -726,6 +733,7 @@
                                 <label for="spell-17360" class="mage-color">Mana Tide</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Paladin Auras-->
                     <div class="has-buff-count">
@@ -763,6 +771,7 @@
                                 <label for="spell-19896" class="paladin-color">Shadow Resistance</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <!--Paladin Blessings-->
                     <div class="has-buff-count">
@@ -815,6 +824,7 @@
                                 <label for="spell-5599" class="paladin-color">Protection</label>
                             </li>
                         </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-20236"/>
@@ -825,7 +835,7 @@
                         <input type="checkbox" id="spell-15123"/>
                         <a href="https://classic.wowhead.com/spell=15123/resist-fire" data-wowhead="buff&amp;lvl=55"><img src="img/spell_fire_firearmor.jpg" alt="Resist Fire"/></a>
                         <label for="spell-15123">Resist Fire</label>
-                        <a href="#resist-fire" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <a href="#resist-fire" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="resist-fire">
                             Gives 81-83 fire resistance.<br />
                             Stacks with <a href="https://classic.wowhead.com/spell=10535/fire-resistance" data-wowhead="buff">totem</a>/<a href="https://classic.wowhead.com/spell=19900/fire-resistance-aura" data-wowhead="buff">aura</a>
@@ -834,85 +844,163 @@
                         </small>
                     </div>
                 </div>
-                <!--Warrior Self Buffs-->
-                <div class="col-sm-auto border mr-sm-3 mb-sm-3 float-left bc-cell">
+                <!--Personal Buffs-->
+                <div class="col-sm-auto border mr-sm-3 mb-sm-3 float-left bc-cell" id="personal-buffs">
                     <div class="bc-cell-header m-sm-1">
-                        <span class="h4 warrior-color">Warrior Self Buffs</span>
+                        <span class="h4">Personal Buffs</span>
                         <button class="ml-3 btn-sm btn-secondary">Clear</button>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-71"/>
-                        <a href="https://classic.wowhead.com/spell=71/defensive-stance"><img src="img/ability_warrior_defensivestance.jpg" alt="Stance"/></a>
-                        <label for="spell-71">Stance</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-5302"/>
-                        <a href="https://classic.wowhead.com/spell=5302/defensive-state"><img src="img/ability_defend.jpg" alt="Defensive State"/></a>
-                        <label for="spell-5302">Defensive State</label>
-                        <a href="#defensive-state" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
-                        <small class="collapse mb-sm-3" id="defensive-state">Allows Revenge. Invisible buff.</small>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-14204"/>
-                        <a href="https://classic.wowhead.com/spell=14204/enrage" data-wowhead="buff"><img src="img/spell_shadow_unholyfrenzy.jpg" alt="Enrage"/></a>
-                        <label for="spell-14204">Enrage</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-12970"/>
-                        <a href="https://classic.wowhead.com/spell=12970/flurry" data-wowhead="buff"><img src="img/ability_ghoulfrenzy.jpg" alt="Flurry"/></a>
-                        <label for="spell-12970">Flurry</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-23888"/>
-                        <a href="https://classic.wowhead.com/spell=23888/bloodthirst" data-wowhead="buff"><img src="img/spell_nature_bloodlust.jpg" alt="Bloodthirst"/></a>
-                        <label for="spell-23888">Bloodthirst</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-29131"/>
-                        <a href="https://classic.wowhead.com/spell=29131/bloodrage" data-wowhead="buff"><img src="img/ability_racial_bloodrage.jpg" alt="Bloodrage"/></a>
-                        <label for="spell-29131">Bloodrage</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-18499"/>
-                        <a href="https://classic.wowhead.com/spell=18499/berserker-rage" data-wowhead="buff"><img src="img/spell_nature_ancestralguardian.jpg" alt="Berserker Rage"/></a>
-                        <label for="spell-18499">Berserker Rage</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-2565"/>
-                        <a href="https://classic.wowhead.com/spell=2565/shield-block" data-wowhead="buff"><img src="img/ability_defend.jpg" alt="Shield Block"/></a>
-                        <label for="spell-2565">Shield Block</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-12292"/>
-                        <a href="https://classic.wowhead.com/spell=12292/sweeping-strikes" data-wowhead="buff"><img src="img/ability_rogue_slicedice.jpg" alt="Sweeping Strikes"/></a>
-                        <label for="spell-12292">Sweeping Strikes</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-871"/>
-                        <img src="img/ability_warrior_shieldwall.jpg" alt="30 Minute Ability" />
-                        <label for="spell-871">30 Minute Ability</label>
-                        <a href="#warrior-30-min" data-toggle="collapse">▼</a>
-                        <ul class="collapse mb-sm-3" id="warrior-30-min">
-                            <li><small>These abilities share a cooldown.</small></li>
-                            <li><a href="https://classic.wowhead.com/spell=20230/retaliation" data-wowhead="buff"><img src="img/ability_warrior_challange.jpg" alt="Retaliation" /> Retaliation</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=871/shield-wall" data-wowhead="buff"><img src="img/ability_warrior_shieldwall.jpg" alt="Shield Wall" /> Shield Wall</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=1719/recklessness" data-wowhead="buff"><img src="img/ability_criticalstrike.jpg" alt="Recklessness" /> Recklessness</a></li>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_warrior.jpg" alt="Warrior Buffs" /> <span class="warrior-color">Warrior Buffs</span> <a href="#warrior-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="warrior-personal-buffs" data-class="warrior" data-parent="#personal-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-71"/>
+                                <a href="https://classic.wowhead.com/spell=71/defensive-stance"><img src="img/ability_warrior_defensivestance.jpg" alt="Stance"/></a>
+                                <label for="spell-71">Stance</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-5302"/>
+                                <a href="https://classic.wowhead.com/spell=5302/defensive-state"><img src="img/ability_defend.jpg" alt="Defensive State"/></a>
+                                <label for="spell-5302">Defensive State</label>
+                                <a href="#defensive-state" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="defensive-state" data-info>Allows <a href="https://classic.wowhead.com/spell=11601/revenge">Revenge</a>. Invisible buff.</small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-14204"/>
+                                <a href="https://classic.wowhead.com/spell=14204/enrage" data-wowhead="buff"><img src="img/spell_shadow_unholyfrenzy.jpg" alt="Enrage"/></a>
+                                <label for="spell-14204">Enrage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-12970"/>
+                                <a href="https://classic.wowhead.com/spell=12970/flurry" data-wowhead="buff"><img src="img/ability_ghoulfrenzy.jpg" alt="Flurry"/></a>
+                                <label for="spell-12970">Flurry</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-23888"/>
+                                <a href="https://classic.wowhead.com/spell=23888/bloodthirst" data-wowhead="buff"><img src="img/spell_nature_bloodlust.jpg" alt="Bloodthirst"/></a>
+                                <label for="spell-23888">Bloodthirst</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29131"/>
+                                <a href="https://classic.wowhead.com/spell=29131/bloodrage" data-wowhead="buff"><img src="img/ability_racial_bloodrage.jpg" alt="Bloodrage"/></a>
+                                <label for="spell-29131">Bloodrage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-18499"/>
+                                <a href="https://classic.wowhead.com/spell=18499/berserker-rage" data-wowhead="buff"><img src="img/spell_nature_ancestralguardian.jpg" alt="Berserker Rage"/></a>
+                                <label for="spell-18499">Berserker Rage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-2565"/>
+                                <a href="https://classic.wowhead.com/spell=2565/shield-block" data-wowhead="buff"><img src="img/ability_defend.jpg" alt="Shield Block"/></a>
+                                <label for="spell-2565">Shield Block</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-12292"/>
+                                <a href="https://classic.wowhead.com/spell=12292/sweeping-strikes" data-wowhead="buff"><img src="img/ability_rogue_slicedice.jpg" alt="Sweeping Strikes"/></a>
+                                <label for="spell-12292">Sweeping Strikes</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-871"/>
+                                <img src="img/ability_warrior_shieldwall.jpg" alt="30 Minute Ability" />
+                                <label for="spell-871">30 Minute Ability</label>
+                                <a href="#warrior-30-min" data-toggle="collapse">▼</a>
+                                <ul class="collapse mb-sm-3" id="warrior-30-min" data-info>
+                                    <li><small>These abilities share a cooldown.</small></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20230/retaliation" data-wowhead="buff"><img src="img/ability_warrior_challange.jpg" alt="Retaliation" /> Retaliation</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=871/shield-wall" data-wowhead="buff"><img src="img/ability_warrior_shieldwall.jpg" alt="Shield Wall" /> Shield Wall</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=1719/recklessness" data-wowhead="buff"><img src="img/ability_criticalstrike.jpg" alt="Recklessness" /> Recklessness</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-12976"/>
+                                <a href="https://classic.wowhead.com/spell=12976/last-stand" data-wowhead="buff"><img src="img/spell_holy_ashestoashes.jpg" alt="Last Stand"/></a>
+                                <label for="spell-12976">Last Stand</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16491"/>
+                                <a href="https://classic.wowhead.com/spell=16491/blood-craze" data-wowhead="buff"><img src="img/spell_shadow_summonimp.jpg" alt="Blood Craze"/></a>
+                                <label for="spell-16491">Blood Craze</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-21977"/>
+                                <a href="https://classic.wowhead.com/spell=21890/warriors-wrath"><img src="img/ability_warrior_savageblow.jpg" alt="5pc T2 Proc"/></a>
+                                <label for="spell-21977">5pc T2 Proc</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-23547"/>
+                                <a href="https://classic.wowhead.com/spell=23547/parry" data-wowhead="buff"><img src="img/ability_parry.jpg" alt="8pc T2 Proc"/></a>
+                                <label for="spell-23547">8pc T2 Proc</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28846"/>
+                                <a href="https://classic.wowhead.com/spell=28846/cheat-death" data-wowhead="buff"><img src="img/inv_helmet_58.jpg" alt="8pc T3 Proc"/></a>
+                                <label for="spell-28846">8pc T3 Proc</label>
+                            </li>
                         </ul>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-12976"/>
-                        <a href="https://classic.wowhead.com/spell=12976/last-stand" data-wowhead="buff"><img src="img/spell_holy_ashestoashes.jpg" alt="Last Stand"/></a>
-                        <label for="spell-12976">Last Stand</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-16491"/>
-                        <a href="https://classic.wowhead.com/spell=16491/blood-craze" data-wowhead="buff"><img src="img/spell_shadow_summonimp.jpg" alt="Blood Craze"/></a>
-                        <label for="spell-16491">Blood Craze</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-21977"/>
-                        <a href="https://classic.wowhead.com/spell=21890/warriors-wrath"><img src="img/ability_warrior_savageblow.jpg" alt="Warrior's Wrath (5pc T2)"/></a>
-                        <label for="spell-21977">Warrior's Wrath (5pc T2)</label>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_druid.jpg" alt="Druid Buffs" /> <span class="druid-color">Druid Buffs</span> <a href="#druid-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="druid-personal-buffs" data-class="druid" data-parent="#personal-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-9634"/>
+                                <img src="img/ability_racial_bearform.jpg" alt="Shapeshift Form"/>
+                                <label for="spell-9634" class="druid-color">Shapeshift Form</label>
+                                <a href="#shapeshift-form" data-toggle="collapse">▼</a>
+                                <ul class="collapse" id="shapeshift-form" data-info>
+                                    <li><a href="https://classic.wowhead.com/spell=9634/dire-bear-form"><img src="img/ability_racial_bearform.jpg" alt="Shapeshift Form" class="druid-color"/> Dire Bear Form</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=768/cat-form"><img src="img/ability_druid_catform.jpg" alt="Shapeshift Form" class="druid-color"/> Cat Form</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=24858/moonkin-form"><img src="img/spell_nature_forceofnature.jpg" alt="Shapeshift Form" class="druid-color"/> Moonkin Form</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17061"/>
+                                <a href="https://classic.wowhead.com/spell=17061/furor"><img src="img/spell_holy_blessingofstamina.jpg" alt="Furor"/></a>
+                                <label for="spell-17061" class="druid-color">Furor</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-5229"/>
+                                <a href="https://classic.wowhead.com/spell=5229/enrage" data-wowhead="buff"><img src="img/ability_druid_enrage.jpg" alt="Enrage"/></a>
+                                <label for="spell-5229" class="druid-color">Enrage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16864"/>
+                                <a href="https://classic.wowhead.com/spell=16864/omen-of-clarity" data-wowhead="buff"><img src="img/spell_nature_crystalball.jpg" alt="Omen of Clarity"/></a>
+                                <label for="spell-16864" class="druid-color">Omen of Clarity</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16870"/>
+                                <a href="https://classic.wowhead.com/spell=16870/clearcasting" data-wowhead="buff"><img src="img/spell_shadow_manaburn.jpg" alt="Clearcasting"/></a>
+                                <label for="spell-16870" class="druid-color">Clearcasting</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-22812"/>
+                                <a href="https://classic.wowhead.com/spell=22812/barkskin" data-wowhead="buff"><img src="img/spell_nature_stoneclawtotem.jpg" alt="Barkskin"/></a>
+                                <label for="spell-22812" class="druid-color">Barkskin</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-22896"/>
+                                <a href="https://classic.wowhead.com/spell=22896/frenzied-regeneration" data-wowhead="buff"><img src="img/ability_bullrush.jpg" alt="Frenzied Regeneration"/></a>
+                                <label for="spell-22896" class="druid-color">Frenzied Regeneration</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16975"/>
+                                <a href="https://classic.wowhead.com/spell=16975/predatory-strikes"><img src="img/ability_hunter_pet_cat.jpg" alt="Predatory Strikes"/></a>
+                                <label for="spell-16975" class="druid-color">Predatory Strikes</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-13494"/>
+                                <a href="https://classic.wowhead.com/spell=13494/haste" data-wowhead="buff"><img src="img/inv_mace_14.jpg" alt="Manual Crowd Pummeler"/></a>
+                                <label for="spell-13494" class="druid-color">Manual Crowd Pummeler</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-17116"/>
+                                <a href="https://classic.wowhead.com/spell=17116/natures-swiftness" data-wowhead="buff"><img src="img/spell_nature_ravenform.jpg" alt="Nature's Swiftness"/></a>
+                                <label for="spell-17116" class="druid-color">Nature's Swiftness</label>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!--Equipment Buffs-->
@@ -925,14 +1013,14 @@
                         <input type="checkbox" id="spell-15389"/>
                         <img src="img/inv_misc_gem_03.jpg" alt="Libram - Helmet"/>
                         <label for="spell-15389">Libram - Helmet</label>
-                        <a href="#libram-hat" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <a href="#libram-hat" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="libram-hat">Librams consume a buff slot.<br />Librams on helmets can never be removed.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-15394"/>
                         <img src="img/inv_misc_gem_03.jpg" alt="Libram - Legs"/>
                         <label for="spell-15394">Libram - Legs</label>
-                        <a href="#libram-legs" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <a href="#libram-legs" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="libram-legs">Librams consume a buff slot.<br />Librams on legs can be removed with <a href="https://classic.wowhead.com/item=15564/rugged-armor-kit">LW kits.</a></small>
                     </div>
                     <div>
@@ -944,8 +1032,8 @@
                         <input type="checkbox" id="spell-20034"/>
                         <a href="https://classic.wowhead.com/spell=20007/holy-strength" data-wowhead="buff"><img src="img/spell_holy_blessingofstrength.jpg" alt="Crusader (Off Hand)"/></a>
                         <label for="spell-20034">Crusader (Off Hand)</label>
-                        <a href="#crusader" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
-                        <small class="collapse mb-sm-3" id="crusader">Crusader buffs from both weapons stack and each consumes a buff.</small>
+                        <a href="#crusader" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="crusader">Crusader buffs from both weapons<br/>stack and each consumes a buff.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-18262"/>
@@ -986,7 +1074,7 @@
                         <input type="checkbox" id="spell-18787"/>
                         <a href="https://classic.wowhead.com/spell=18787/heavens-blessing" data-wowhead="buff"><img src="img/inv_pants_04.jpg" alt="Cloudkeeper Legplates"/></a>
                         <label for="spell-18787">Cloudkeeper Legplates</label>
-                        <a href="#ckl" data-toggle="collapse"><img src="img/Information.png" alt="More Info"/></a>
+                        <a href="#ckl" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="ckl">Puts <a href="https://classic.wowhead.com/item=20130/diamond-flask">Diamond Flask</a> on cooldown and vice versa.</small>
                     </div>
                     <div>
@@ -1043,7 +1131,7 @@
         </div>
     </div>
 </div>
-<div id="copy-toast" class="toast bg-dark" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
+<div id="copy-toast" class="toast bg-dark hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
     <div class="toast-header bg-dark">
         <strong class="mr-auto">URL Copied!</strong>
         <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
@@ -1052,6 +1140,18 @@
     </div>
     <div class="toast-body">
         URL copied to the clipboard.
+    </div>
+</div>
+<div id="personal-buff-toast" class="toast bg-dark hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+    <div class="toast-header bg-dark">
+        <strong class="mr-auto">Personal Buffs Cleared</strong>
+        <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="toast-body">
+        <p>You can only select personal buffs for one class.</p>
+        <p><span id="buff-class-removed"></span> personal buffs were cleared since you selected <span id="buff-class-selected"></span> personal buffs.</p>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
