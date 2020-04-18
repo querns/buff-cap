@@ -26,8 +26,19 @@ a + small, .indent, .buff-summary {
   padding-left: 1.5rem;
 }
 
+.buff-summary a {
+  float: left;
+}
+.buff-summary a:nth-child(7n) {
+  clear: left;
+}
 .buff-summary img {
   margin-right: 5px;
+}
+.buff-summary::after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 ul:not(.sub-section) li a:not(.small-inline) {
