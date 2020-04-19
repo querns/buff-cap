@@ -38,9 +38,9 @@ function calculateTotalBuffs() {
         hash = hash.replace(/\+/g, '-');
         hash = hash.replace(/\//g, '_');
 
-        window.location.hash = hash;
+        history.replaceState(null, null, `#${hash}`);
     } else {
-        window.location.hash = "";
+        history.replaceState(null, null, "#");
     }
 }
 
