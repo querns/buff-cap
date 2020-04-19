@@ -13,12 +13,19 @@
 <body>
 <nav class="navbar fixed-top navbar-expand-md bg-dark">
     <div class="container">
-        <h1>Buff Cap Calculator <span class="badge badge-success" id="total-buff-count">0</span></h1>
+        <h2>
+            Buff Cap Calculator
+            <span class="badge badge-success" id="buff-count-container">
+                <span id="total-buff-count">0</span>
+                <span id="buff-count-warning" class="hidden d-none d-sm-inline" data-color-blind-help>ⓘ</span>
+                <span id="buff-count-danger" class="hidden d-none d-sm-inline" data-color-blind-help>⚠</span>
+            </span>
+        </h2>
         <!--suppress HtmlFormInputWithoutLabel -->
         <input type="hidden" id="clipboard-input" />
-        <button class="btn btn-primary" id="clipboard-button">Copy URL to Clipboard</button>
+        <button class="btn btn-primary d-none d-md-inline" id="clipboard-button">Copy URL to Clipboard</button>
         <button class="btn btn-primary" id="clear-all">Clear All</button>
-        <button class="btn btn-secondary" data-toggle="modal" data-target="#about-modal">About</button>
+        <button class="btn btn-secondary d-none d-md-inline" data-toggle="modal" data-target="#about-modal">About</button>
     </div>
 </nav>
 <main class="container">
@@ -130,7 +137,7 @@
                                     <a href="#fury-of-ragnaros" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                                     <small class="collapse mb-sm-3" id="fury-of-ragnaros">
                                         Mind control a <a href="https://classic.wowhead.com/npc=8913/twilight-emissary" data-info>Twilight Emissary</a> in BRD.<br/>
-                                        Reportedly does not stack with <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir">Greater<br/>Arcane Elixir</a>.<br/>
+                                        Reportedly does not stack with <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir" data-info>Greater<br/>Arcane Elixir</a>.<br/>
                                         Contact Querns in FC if you can prove<br />or disprove this.
                                     </small>
                                 </li>
@@ -204,6 +211,7 @@
                                     <label for="spell-22237">Dark Desire</label>
                                 </li>
                             </ul>
+                            <div class="buff-summary"></div>
                         </div>
                         <div>
                             <input type="checkbox" id="spell-27572"/>
@@ -360,7 +368,7 @@
                         <ul class="collapse sub-section" id="spell-power">
                             <li>
                                 <input type="checkbox" id="spell-17539"/>
-                                <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir"><img src="img/inv_potion_25.jpg" alt="Greater Arcane Elixir" /></a>
+                                <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir" data-info><img src="img/inv_potion_25.jpg" alt="Greater Arcane Elixir" /></a>
                                 <label for="spell-17539">Greater Arcane Elixir</label>
                             </li>
                             <li>
@@ -751,7 +759,7 @@
                                 <a href="https://classic.wowhead.com/spell=22009/greater-heal" data-wowhead="buff"><img src="img/inv_gauntlets_14.jpg" alt="Transcendence 8pc Proc"/></a>
                                 <label for="spell-22010" class="priest-color">Transcendence 8pc Proc</label>
                                 <a href="#transcendence" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
-                                <small class="collapse mb-sm-3" id="transcendence">Stacks with <a href="https://classic.wowhead.com/spell=10929/renew" data-wowhead="buff">Renew.</a></small>
+                                <small class="collapse mb-sm-3" id="transcendence">Stacks with <a href="https://classic.wowhead.com/spell=10929/renew" data-wowhead="buff" data-info>Renew.</a></small>
                             </li>
                         </ul>
                         <div class="buff-summary"></div>
@@ -1374,9 +1382,9 @@
                         <label for="spell-22756">Elemental Sharpening Stone (OH)</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="spell-22756"/>
+                        <input type="checkbox" id="spell-25123"/>
                         <img src="img/inv_potion_100.jpg" alt="Weapon Oils"/>
-                        <label for="spell-22756">Weapon Oils</label>
+                        <label for="spell-25123">Weapon Oils</label>
                         <a href="#weapon-oils" data-toggle="collapse">▼</a>
                         <ul class="collapse" id="weapon-oils" data-info>
                             <li><a href="https://classic.wowhead.com/item=20748/brilliant-mana-oil"><img src="img/inv_potion_100.jpg" alt="Brilliant Mana Oil"/> Brilliant Mana Oil</a></li>

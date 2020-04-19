@@ -1,8 +1,10 @@
 function calculateTotalBuffs() {
-    const badge = $("#total-buff-count");
+    const buffCountContainer = $("#buff-count-container");
+
     let count = 0;
     let badgeClass = "badge-success";
     let selectedBuffs = [];
+    let colorBlindBadge;
 
     $("input[type='checkbox']").each((index, element) => {
         if ($(element).prop("checked")) {
@@ -17,15 +19,38 @@ function calculateTotalBuffs() {
         }
     });
 
-    if (count >= 28) {
+    buffCountContainer.tooltip("dispose");
+    if (count >= 28 && count < 32) {
         badgeClass = "badge-warning";
-    }
+        colorBlindBadge = "#buff-count-warning";
+        buffCountContainer.tooltip({
+            title: "You're close to the buff cap of 32.",
+            html: true,
+            placement: "bottom",
 
-    if (count >= 32) {
+        })
+    } else if (count === 32) {
         badgeClass = "badge-danger";
+        colorBlindBadge = "#buff-count-warning";
+        buffCountContainer.tooltip({
+            title: "Being exactly at the buff cap is dangerous.<br />If any of your buffs are overwritten by another player, it causes both buffs to apply for one batch, temporarily pushing you to 33.",
+            html: true,
+            placement: "bottom",
+        });
+    } else if (count >= 32) {
+        badgeClass = "badge-danger";
+        colorBlindBadge = "#buff-count-danger";
+        buffCountContainer.tooltip({
+            title: "You're over the buff cap of 32.",
+            html: true,
+            placement: "bottom",
+        });
     }
 
-    badge.removeClass("badge-success badge-warning badge-danger").addClass(badgeClass).text(count);
+    buffCountContainer.removeClass("badge-success badge-warning badge-danger").addClass(badgeClass)
+    $("#total-buff-count").text(count);
+    $("[data-color-blind-help]").addClass("hidden");
+    $(colorBlindBadge).removeClass("hidden");
 
     if (selectedBuffs.length > 0) {
         const bytes16 = new Uint16Array(selectedBuffs.sort());

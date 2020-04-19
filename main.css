@@ -132,4 +132,8 @@ body {
   right: 20px;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */
