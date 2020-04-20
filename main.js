@@ -76,12 +76,15 @@ function calculateSubSection(currentTarget) {
         .closest(".has-buff-count")
         .find(".buff-count").text(selectedBuffs.length === 0 ? "" : selectedBuffs.length);
 
+    $(summary).tooltip("dispose");
     $(summary).empty();
     $(selectedBuffs).each((index, element) => {
-        return $(element).closest("li")
+        $(element).closest("li")
             .find("a:not(:has(img[data-info])):not([data-info])")
-            .clone().appendTo(summary);
+            .clone(true)
+            .appendTo(summary);
     });
+    $(summary).find("a").data("toggle", "tooltip").tooltip();
 }
 
 function loadBuffsFromURL() {
