@@ -136,4 +136,9 @@ body {
   display: none !important;
 }
 
+.exclusion-modal-link {
+  color: #FFFFFF !important;
+  cursor: pointer;
+}
+
 /*# sourceMappingURL=main.css.map */

@@ -91,8 +91,8 @@
                         </div>
                         <div>
                             <input type="checkbox" id="spell-1386"/>
-                            <a href="https://classic.wowhead.com/spell=1386/echoes-of-lordaeron" data-wowhead="buff"><img src="img/inv_bannerpvp_02.jpg" alt="Echoes of Lordareon"/></a>
-                            <label for="spell-1386">Echoes of Lordareon</label>
+                            <a href="https://classic.wowhead.com/spell=1386/echoes-of-lordaeron" data-wowhead="buff"><img src="img/inv_bannerpvp_02.jpg" alt="Echoes of Lordaeron"/></a>
+                            <label for="spell-1386">Echoes of Lordaeron</label>
                         </div>
                         <div class="has-buff-count">
                             <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
@@ -169,13 +169,13 @@
                         <!--Valentine's Day Collection-->
                         <div>
                             <div>
-                                <input type="checkbox" id="spell-27669"/>
+                                <input type="checkbox" id="spell-27669" data-exclusive="non-profession"/>
                                 <img src="img/inv_misc_gift_01.jpg" alt="Valentine's Day Collection"/>
                                 <label for="spell-27669">Valentine's Day Collection</label>
                                 <a href="#valentines-collection" data-toggle="collapse">▼</a>
                             </div>
                             <ul class="collapse mb-sm-3" id="valentines-collection">
-                                <li><small>Does not stack with Blasted Lands consumes.</small></li>
+                                <li><small>In the <a class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#non-profession-exclusion-modal">non-profession consumable<br/>exclusion category.</a></small></li>
                                 <li><a href="https://classic.wowhead.com/spell=27669/orgrimmar-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Orgrimmar Gift of Friendship"/> Orgrimmar Gift of Friendship</a></li>
                                 <li><a href="https://classic.wowhead.com/spell=27671/undercity-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_04.png" alt="Undercity Gift of Friendship"/> Undercity Gift of Friendship</a></li>
                                 <li><a href="https://classic.wowhead.com/spell=27670/thunder-bluff-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_05.png" alt="Thunder Bluff Gift of Friendship"/> Thunder Bluff Gift of Friendship</a></li>
@@ -295,28 +295,25 @@
                     </div>
                     <!--Zanza-->
                     <div>
-                        <input type="checkbox" id="spell-24382"/>
+                        <input type="checkbox" id="spell-24382" data-exclusive="non-profession"/>
                         <img src="img/inv_misc_coin_08.jpg" alt="Zanza Potion" />
                         <label for="spell-24382">Zanza Potion</label>
                         <a href="#zanza" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3" id="zanza">
-                            <li><small>Only one of these may be active at one time.</small></li>
-                            <li>
-                                <a href="https://classic.wowhead.com/item=20079/spirit-of-zanza"><img src="img/inv_potion_30.jpg" alt="Spirit of Zanza"/> Spirit of Zanza</a>
-                                <small>Does not stack with <a class="small-inline" href="https://classic.wowhead.com/item=8411/lung-juice-cocktail">Lung Juice Cocktail</a>.</small>
-                            </li>
+                            <li><small>In the <a class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#non-profession-exclusion-modal">non-profession consumable<br/>exclusion category.</a></small></li>
+                            <li><a href="https://classic.wowhead.com/item=20079/spirit-of-zanza"><img src="img/inv_potion_30.jpg" alt="Spirit of Zanza"/> Spirit of Zanza</a></li>
                             <li><a href="https://classic.wowhead.com/item=20081/swiftness-of-zanza"><img src="img/inv_potion_31.jpg" alt="Swiftness of Zanza"/> Swiftness of Zanza</a></li>
                             <li><a href="https://classic.wowhead.com/item=20080/sheen-of-zanza"><img src="img/inv_potion_29.jpg" alt="Sheen of Zanza"/> Sheen of Zanza</a></li>
                         </ul>
                     </div>
                     <!--Blasted Lands-->
                     <div>
-                        <input type="checkbox" id="spell-10667"/>
+                        <input type="checkbox" id="spell-10667" data-exclusive="non-profession"/>
                         <img src="img/inv_stone_15.jpg" alt="Blasted Lands Consumable"/>
                         <label for="spell-10667">Blasted Lands Consumable</label>
                         <a href="#blasted-lands" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3" id="blasted-lands">
-                            <li><small>Only one of these may be active at one time.</small></li>
+                            <li><small>In the <a class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#non-profession-exclusion-modal">non-profession consumable<br/>exclusion category.</a></small></li>
                             <li><a href="https://classic.wowhead.com/item=8410/r-o-i-d-s#shared-cooldown"><img src="img/inv_stone_15.jpg" alt="R.O.I.D.S."/> R.O.I.D.S</a></li>
                             <li><a href="https://classic.wowhead.com/item=8412/ground-scorpok-assay"><img src="img/inv_misc_dust_02.jpg" alt="Ground Scorpok Assay"/> Ground Scorpok Assay</a></li>
                             <li>
@@ -1503,9 +1500,26 @@
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body">
+    <div class="toast-body text-justify">
         <p>You can only select personal buffs for one class.</p>
         <p><span id="buff-class-removed"></span> personal buffs were cleared since you selected <span id="buff-class-selected"></span> personal buffs.</p>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="non-profession-exclusion-modal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Non-Profession Consumable Exclusion Category</h4>
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Valentine's Day Collections, Zanza Potions, and Blasted Lands consumables are all mutually exclusive.
+                They don't stack, and consuming one of these types of items will overwrite the buff from one you may
+                have taken previously.
+            </div>
+        </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
