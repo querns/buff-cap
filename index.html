@@ -1207,6 +1207,116 @@
                             </li>
                         </ul>
                     </div>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_hunter.jpg" alt="Hunter Buffs" /> <span class="hunter-color">Hunter Buffs</span> <a href="#hunter-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="hunter-personal-buffs" data-class="rogue" data-parent="#personal-buffs">
+                            <li>
+                                <small>
+                                    This list was assembled by looking at<br />Wowhead and with some assumptions.<br />
+                                    Open an issue on <a class="small-inline" href="https://github.com/querns/buff-cap/issues">Github</a> if I've made a<br />
+                                    mistake or missed something.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-13165"/>
+                                <img src="img/spell_nature_ravenform.jpg" alt="Personal Aspect"/>
+                                <label for="spell-13165" class="hunter-color">Aspect of the...</label>
+                                <a href="#hunter-personal-aspect" data-toggle="collapse">▼</a>
+                                <ul class="collapse" id="hunter-personal-aspect" data-info>
+                                    <li><small>Aspects that affect the group aren't<br />listed here.<br/>Check the Raid Buffs section.</small></li>
+                                    <li><a href="https://classic.wowhead.com/spell=14322/aspect-of-the-hawk" data-wowhead="buff"><img src="img/spell_nature_ravenform.jpg" alt="... of the Hawk" class="hunter-color"/> ... Hawk</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=13163/aspect-of-the-monkey" data-wowhead="buff"><img src="img/ability_hunter_aspectofthemonkey.jpg" alt="... of the Monkey" class="hunter-color"/> ... Monkey</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=5118/aspect-of-the-cheetah" data-wowhead="buff"><img src="img/ability_mount_jungletiger.jpg" alt="... of the Cheetah" class="hunter-color"/> ... Cheetah</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=13161/aspect-of-the-beast" data-wowhead="buff"><img src="img/ability_mount_pinktiger.jpg" alt="... of the Beast" class="hunter-color"/> ... Beast</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1515"/>
+                                <a href="https://classic.wowhead.com/spell=1515/tame-beast" data-wowhead="buff"><img src="img/ability_hunter_beasttaming.jpg" alt="Tame Beast"/></a>
+                                <label for="spell-1515" class="hunter-color">Tame Beast</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1002"/>
+                                <a href="https://classic.wowhead.com/spell=1002/eyes-of-the-beast" data-wowhead="buff"><img src="img/ability_eyeoftheowl.jpg" alt="Eyes of the Beast"/></a>
+                                <label for="spell-1002" class="hunter-color">Eyes of the Beast</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1495"/>
+                                <a href="https://classic.wowhead.com/spell=1495/mongoose-bite"><img src="img/ability_hunter_swiftstrike.jpg" alt="Mongoose Bite Enabler"/></a>
+                                <label for="spell-1495" class="hunter-color">Mongoose Bite Enabler</label>
+                                <a class="small-inline" href="#mongoose-bite" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="mongoose-bite">
+                                    Since this works similarly to <a class="small-inline" href="https://classic.wowhead.com/spell=11601/revenge">Revenge</a>,<br />
+                                    I assume that an invisible buff allows<br />Mongoose Bite to be cast.<br />
+                                    Enable if you will be struck in combat.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-3045"/>
+                                <a href="https://classic.wowhead.com/spell=3045/rapid-fire" data-wowhead="buff"><img src="img/ability_hunter_runningshot.jpg" alt="Rapid Fire"/></a>
+                                <label for="spell-3045" class="hunter-color">Rapid Fire</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-5384"/>
+                                <a href="https://classic.wowhead.com/spell=5384/feign-death" data-wowhead="buff"><img src="img/ability_rogue_feigndeath.jpg" alt="Feign Death"/></a>
+                                <label for="spell-5384" class="hunter-color">Feign Death</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-6150"/>
+                                <a href="https://classic.wowhead.com/spell=6150/quick-shots" data-wowhead="buff"><img src="img/spell_nature_ravenform.jpg" alt="Improved A.o.t.Hawk"/></a>
+                                <label for="spell-6150" class="hunter-color">Improved A.o.t.Hawk</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19578"/>
+                                <a href="https://classic.wowhead.com/spell=19578/spirit-bond"><img src="img/classic_ability_druid_demoralizingroar.jpg" alt="Spirit Bond"/></a>
+                                <label for="spell-19578" class="hunter-color">Spirit Bond</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19263"/>
+                                <a href="https://classic.wowhead.com/spell=19263/deterrence" data-wowhead="buff"><img src="img/ability_whirlwind.jpg" alt="Deterrence"/></a>
+                                <label for="spell-19263" class="hunter-color">Deterrence</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19306"/>
+                                <a href="https://classic.wowhead.com/spell=19306/counterattack"><img src="img/ability_warrior_challange.jpg" alt="Counterattack"/></a>
+                                <label for="spell-19306" class="hunter-color">Counterattack Enabler</label>
+                                <a class="small-inline" href="#counterattack" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="counterattack">
+                                    Since this works similarly to <a class="small-inline" href="https://classic.wowhead.com/spell=11601/revenge">Revenge</a>,<br />
+                                    I assume that an invisible buff allows<br />Counterattack to be cast.<br />
+                                    Enable if you have this talent and<br />you will be struck in combat.
+                                </small>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/ability_hunter_beasttraining.jpg" alt="Hunter Pet Buffs" /> <span class="hunter-color">Hunter Pet Buffs</span> <a href="#hunter-pet-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="hunter-pet-buffs" data-class="hunter" data-parent="#personal-buffs">
+                            <li><small>These buffs are applied to a hunter's<br /> pet by its owner.</small></li>
+                            <li>
+                                <input type="checkbox" id="spell-21926"/>
+                                <a href="https://classic.wowhead.com/spell=21926/natures-ally"><img src="img/inv_helmet_05.jpg" alt="5pc T1"/></a>
+                                <label for="spell-21926" class="hunter-color">5pc T1</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-21928"/>
+                                <a href="https://classic.wowhead.com/spell=21928/natures-ally"><img src="img/inv_belt_28.jpg" alt="5pc T2"/></a>
+                                <label for="spell-21928" class="hunter-color">5pc T2</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29233"/>
+                                <a href="https://classic.wowhead.com/spell=29233/beast-of-the-unseen-path"><img src="img/inv_jewelry_ring_ahnqiraj_03.jpg" alt="AQ20 3pc"/></a>
+                                <label for="spell-29233" class="hunter-color">AQ20 3pc</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28756"/>
+                                <a href="https://classic.wowhead.com/spell=28756/stalkers-ally"><img src="img/inv_jewelry_ring_51naxxramas.jpg" alt="4pc T3"/></a>
+                                <label for="spell-28756" class="hunter-color">4pc T3</label>
+                            </li>
+                        </ul>
+                    </div>
                     <!--Rogue Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
