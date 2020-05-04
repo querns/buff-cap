@@ -141,4 +141,26 @@ body {
   cursor: pointer;
 }
 
+.bc-cell {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+button[aria-expanded=true] .collapse-icon-closed {
+  display: none;
+}
+
+button[aria-expanded=false] .collapse-icon-open {
+  display: none;
+}
+
+.bc-cell-header::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.bc-cell-header button {
+  width: 4rem;
+}
+
 /*# sourceMappingURL=main.css.map */
