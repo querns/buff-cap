@@ -23,7 +23,7 @@
         </h2>
         <!--suppress HtmlFormInputWithoutLabel -->
         <input type="hidden" id="clipboard-input" />
-        <button class="btn btn-primary d-none d-md-inline" id="clipboard-button">Copy URL to Clipboard</button>
+        <button class="btn btn-primary d-none d-md-inline" id="clipboard-button">Share</button>
         <button class="btn btn-primary" id="clear-all">Clear All</button>
         <button class="btn btn-secondary d-none d-md-inline" data-toggle="modal" data-target="#about-modal">About</button>
     </div>
@@ -485,7 +485,7 @@
                     <div>
                         <input type="checkbox" id="spell-18125"/>
                         <img src="img/spell_misc_food.jpg" alt="Food Buff"/>
-                        <label for="spell-18125">Food</label>
+                        <label for="spell-18125">Well Fed / Food Buff</label>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-25804"/>
@@ -1047,6 +1047,16 @@
                         <a href="https://classic.wowhead.com/spell=24242/swift-razzashi-raptor" data-wowhead="buff"><img src="img/ability_mount_raptor.jpg" alt="Mount"/></a>
                         <label for="spell-24242">Mount</label>
                     </div>
+                    <div>
+                        <input type="checkbox" id="spell-1131"/>
+                        <a href="https://classic.wowhead.com/spell=1131/food" data-wowhead="buff"><img src="img/inv_misc_fork-knife.jpg" alt="Eating Food"/></a>
+                        <label for="spell-1131">Eating Food</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-8079"/>
+                        <a href="https://classic.wowhead.com/spell=22734/drink" data-wowhead="buff"><img src="img/inv_drink_18.jpg" alt="Drinking Water"/></a>
+                        <label for="spell-8079">Drinking Water</label>
+                    </div>
                     <!--Warrior Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
@@ -1206,6 +1216,7 @@
                             </li>
                         </ul>
                     </div>
+                    <!--Hunter Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/classicon_hunter.jpg" alt="Hunter Buffs" /> <span class="hunter-color">Hunter Buffs</span> <a href="#hunter-personal-buffs" data-toggle="collapse">▼</a>
@@ -1289,6 +1300,7 @@
                             </li>
                         </ul>
                     </div>
+                    <!--Hunter Pet Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/ability_hunter_beasttraining.jpg" alt="Hunter Pet Buffs" /> <span class="hunter-color">Hunter Pet Buffs</span> <a href="#hunter-pet-buffs" data-toggle="collapse">▼</a>
@@ -1316,11 +1328,11 @@
                             </li>
                         </ul>
                     </div>
-                    <!--Rogue Buffs-->
+                    <!--Mage Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
-                        <img src="img/classicon_rogue.jpg" alt="Rogue Buffs" /> <span class="rogue-color">Rogue Buffs</span> <a href="#rogue-personal-buffs" data-toggle="collapse">▼</a>
-                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="rogue-personal-buffs" data-class="rogue" data-parent="#personal-buffs">
+                        <img src="img/classicon_mage.jpg" alt="Mage Buffs" /> <span class="mage-color">Mage Buffs</span> <a href="#mage-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="mage-personal-buffs" data-class="rogue" data-parent="#personal-buffs">
                             <li>
                                 <small>
                                     This list was assembled by looking at<br />Wowhead and with some assumptions.<br />
@@ -1328,6 +1340,78 @@
                                     mistake or missed something.
                                 </small>
                             </li>
+                            <li>
+                                <input type="checkbox" id="spell-12042"/>
+                                <a href="https://classic.wowhead.com/spell=12042/arcane-power" data-wowhead="buff"><img src="img/spell_nature_lightning.jpg" alt="Arcane Power"/></a>
+                                <label for="spell-12042" class="mage-color">Arcane Power</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-22783"/>
+                                <img src="img/spell_magearmor.jpg" alt="Armor Spells"/>
+                                <label for="spell-22783" class="mage-color">Armor Spells</label>
+                                <a href="#mage-armors" data-toggle="collapse">▼</a>
+                                <ul class="collapse" id="mage-armors" data-info>
+                                    <li><a href="https://classic.wowhead.com/spell=22783/mage-armor" data-wowhead="buff"><img src="img/spell_magearmor.jpg" alt="Mage Armor"/> Mage Armor</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=10220/ice-armor" data-wowhead="buff"><img src="img/spell_frost_frostarmor02.jpg" alt="Ice Armor"/> Ice Armor</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1953"/>
+                                <a href="https://classic.wowhead.com/spell=1953/blink" data-wowhead="buff"><img src="img/spell_arcane_blink.jpg" alt="Blink"/></a>
+                                <label for="spell-1953" class="mage-color">Blink</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-12536"/>
+                                <a href="https://classic.wowhead.com/spell=12536/clearcasting" data-wowhead="buff"><img src="img/spell_shadow_manaburn.jpg" alt="Clearcasting"/></a>
+                                <label for="spell-12536" class="mage-color">Clearcasting</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28682"/>
+                                <a href="https://classic.wowhead.com/spell=28682/combustion" data-wowhead="buff"><img src="img/spell_fire_sealoffire.jpg" alt="Combustion"/></a>
+                                <label for="spell-28682" class="mage-color">Combustion</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10225"/>
+                                <a href="https://classic.wowhead.com/spell=10225/fire-ward" data-wowhead="buff"><img src="img/spell_fire_firearmor.jpg" alt="Fire Ward"/></a>
+                                <label for="spell-10225" class="mage-color">Fire Ward</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28609"/>
+                                <a href="https://classic.wowhead.com/spell=28609/frost-ward" data-wowhead="buff"><img src="img/spell_frost_frostward.jpg" alt="Frost Ward"/></a>
+                                <label for="spell-28609" class="mage-color">Frost Ward</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-13033"/>
+                                <a href="https://classic.wowhead.com/spell=13033/ice-barrier" data-wowhead="buff"><img src="img/spell_ice_lament.jpg" alt="Ice Barrier"/></a>
+                                <label for="spell-13033" class="mage-color">Ice Barrier</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-11958"/>
+                                <a href="https://classic.wowhead.com/spell=11958/ice-block" data-wowhead="buff"><img src="img/spell_frost_frost.jpg" alt="Ice Block"/></a>
+                                <label for="spell-11958" class="mage-color">Ice Block</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10193"/>
+                                <a href="https://classic.wowhead.com/spell=10193/mana-shield" data-wowhead="buff"><img src="img/spell_shadow_detectlesserinvisibility.jpg" alt="Mana Shield"/></a>
+                                <label for="spell-10193" class="mage-color">Mana Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-12043"/>
+                                <a href="https://classic.wowhead.com/spell=12043/presence-of-mind" data-wowhead="buff"><img src="img/spell_nature_enchantarmor.jpg" alt="Presence of Mind"/></a>
+                                <label for="spell-12043" class="mage-color">Presence of Mind</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-130"/>
+                                <a href="https://classic.wowhead.com/spell=130/slow-fall" data-wowhead="buff"><img src="img/spell_magic_featherfall.jpg" alt="Slow Fall"/></a>
+                                <label for="spell-130" class="mage-color">Slow Fall</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Rogue Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_rogue.jpg" alt="Rogue Buffs" /> <span class="rogue-color">Rogue Buffs</span> <a href="#rogue-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="rogue-personal-buffs" data-class="rogue" data-parent="#personal-buffs">
                             <li>
                                 <input type="checkbox" id="spell-6774"/>
                                 <a href="https://classic.wowhead.com/spell=6774/slice-and-dice" data-wowhead="buff"><img src="img/ability_rogue_slicedice.jpg" alt="Slice and Dice"/></a>
@@ -1638,25 +1722,27 @@
         </div>
     </div>
 </div>
-<div id="copy-toast" class="toast bg-dark hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="2000">
-    <div class="toast-header bg-dark">
+<div id="copy-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+    <div class="toast-header">
+        <img src="img/spell_shadow_twilight.jpg" alt="" class="mr-2" />
         <strong class="mr-auto">URL Copied!</strong>
-        <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body">
-        URL copied to the clipboard.
+    <div class="toast-body text-dark">
+        URL copied to the clipboard. Share with others by pasting them the link.
     </div>
 </div>
-<div id="personal-buff-toast" class="toast bg-dark hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
-    <div class="toast-header bg-dark">
+<div id="personal-buff-toast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="5000">
+    <div class="toast-header">
+        <img src="img/spell_nature_purge.jpg" alt="" class="mr-2" />
         <strong class="mr-auto">Personal Buffs Cleared</strong>
-        <button type="button" class="ml-2 mb-1 close text-light" data-dismiss="toast" aria-label="Close">
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body text-justify">
+    <div class="toast-body text-justify text-dark">
         <p>You can only select personal buffs for one class.</p>
         <p><span id="buff-class-removed"></span> personal buffs were cleared since you selected <span id="buff-class-selected"></span> personal buffs.</p>
     </div>

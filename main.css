@@ -1,4 +1,4 @@
-.bc-buff-section img {
+.bc-buff-section img, .toast-header img {
   height: 20px;
   width: 20px;
 }
