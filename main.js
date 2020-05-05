@@ -125,7 +125,7 @@ String.prototype.capitalize = function() {
         $(".buff-summary").empty();
     });
 
-    $(".bc-cell-header button").click(e => {
+    $(".bc-cell-header button[data-clear-button]").click(e => {
         $(e.currentTarget).closest(".bc-cell")
             .find("input[type='checkbox']").prop("checked", false).end()
             .find(".buff-count").text("").end()
@@ -147,36 +147,58 @@ String.prototype.capitalize = function() {
         calculateTotalBuffs();
     });
 
-    $(".has-buff-count input[type='checkbox']").click(e => calculateSubSection(e.currentTarget));
-
     $('[data-toggle="tooltip"]').tooltip();
 
-    $("input[data-exclusive]").click(e => {
-        if ($(e.currentTarget).prop("checked")) {
-            const category = $(e.currentTarget).data("exclusive");
-            $(`input[data-exclusive='${category}']`).each((index, checkbox) => {
-                if (checkbox !== e.currentTarget) {
-                    $(checkbox).prop("checked", false);
-                }
-            });
+    $("input[type='checkbox']").click(e => {
+        const currentTarget = $(e.currentTarget);
 
+        if (currentTarget.closest("#personal-buffs").length > 0) {
+            const clickedClassType = $(e.currentTarget).closest("[data-class]").data("class");
+            const foreignPersonalBuffs = $(`#personal-buffs ul[data-class!='${clickedClassType}']`).find("input[type='checkbox']:checked")
+
+            if (foreignPersonalBuffs.length > 0) {
+                foreignPersonalBuffs.prop("checked", false);
+                foreignPersonalBuffs.each((index, element) => calculateSubSection(element));
+                calculateTotalBuffs();
+                $("#buff-class-removed").text($(foreignPersonalBuffs).one().closest("[data-class]").data("class").toString().capitalize());
+                $("#buff-class-selected").text(clickedClassType.capitalize());
+                $("#personal-buff-toast").toast("show");
+            }
+
+        }
+
+        if (currentTarget.closest(".has-buff-count").length > 0) {
             calculateSubSection(e.currentTarget);
         }
-    });
 
-    $("input[type='checkbox']").click(calculateTotalBuffs);
-    $("#personal-buffs").find("input[type='checkbox']").click(e => {
-        const clickedClassType = $(e.currentTarget).closest("[data-class]").data("class");
-        const foreignPersonalBuffs = $(`#personal-buffs ul[data-class!='${clickedClassType}']`).find("input[type='checkbox']:checked")
+        if (currentTarget.data("exclusive") !== undefined) {
+            if (currentTarget.prop("checked")) {
+                const category = currentTarget.data("exclusive");
+                $(`input[data-exclusive='${category}']`).each((index, checkbox) => {
+                    if (checkbox !== e.currentTarget) {
+                        $(checkbox).prop("checked", false);
+                    }
+                });
 
-        if (foreignPersonalBuffs.length > 0) {
-            foreignPersonalBuffs.prop("checked", false);
-            foreignPersonalBuffs.each((index, element) => calculateSubSection(element));
-            calculateTotalBuffs();
-            $("#buff-class-removed").text($(foreignPersonalBuffs).one().closest("[data-class]").data("class").toString().capitalize());
-            $("#buff-class-selected").text(clickedClassType.capitalize());
-            $("#personal-buff-toast").toast("show");
+                calculateSubSection(e.currentTarget);
+            }
         }
+
+        if (currentTarget.data("vanish") !== undefined) {
+            const otherVanishInput = $("[data-vanish]").not(e.currentTarget);
+
+            if (currentTarget.is(":checked")) {
+                otherVanishInput.add("[data-stealth]").prop("checked", true);
+            } else {
+                otherVanishInput.prop("checked", false);
+            }
+        }
+
+        if (currentTarget.data("stealth") !== undefined && !currentTarget.prop("checked")) {
+            $("[data-vanish]").prop("checked", false);
+        }
+
+        calculateTotalBuffs();
     });
 
     $(document).on("show.bs.collapse", (e) => {

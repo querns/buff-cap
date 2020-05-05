@@ -39,7 +39,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="btn-sm btn-secondary float-right">Clear</button>
+                    <button class="btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="world-buffs" class="collapse show">
                     <div>
@@ -156,7 +156,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="ml-3 btn-sm btn-secondary float-right">Clear</button>
+                    <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="holiday" class="collapse show">
                     <div>
@@ -288,7 +288,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="ml-3 btn-sm btn-secondary float-right">Clear</button>
+                    <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="equipment-buffs" class="collapse show">
                     <div>
@@ -377,7 +377,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="ml-3 btn-sm btn-secondary float-right">Clear</button>
+                    <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="consumables" class="collapse show">
                     <!--Flask-->
@@ -710,7 +710,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="ml-3 btn-sm btn-secondary float-right">Clear</button>
+                    <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="raid-buffs" class="collapse show">
                     <div>
@@ -1117,7 +1117,7 @@
                         <span class="collapse-icon-open">&ndash;</span>
                         <span class="collapse-icon-closed">&plus;</span>
                     </button>
-                    <button class="ml-3 btn-sm btn-secondary float-right">Clear</button>
+                    <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="personal-buffs-collapse-section" class="collapse show">
                     <!--Racial Buffs-->
@@ -1450,7 +1450,7 @@
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/classicon_mage.jpg" alt="Mage Buffs" /> <span class="mage-color">Mage Buffs</span> <a href="#mage-personal-buffs" data-toggle="collapse">▼</a>
-                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="mage-personal-buffs" data-class="rogue" data-parent="#personal-buffs">
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="mage-personal-buffs" data-class="mage" data-parent="#personal-buffs">
                             <li>
                                 <small>
                                     This list was assembled by looking at<br />Wowhead and with some assumptions.<br />
@@ -1556,14 +1556,21 @@
                                 <label for="spell-11305" class="rogue-color">Sprint</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="spell-1787"/>
+                                <input type="checkbox" id="spell-1787" data-stealth />
                                 <a href="https://classic.wowhead.com/spell=1787/stealth" data-wowhead="buff"><img src="img/ability_stealth.jpg" alt="Stealth"/></a>
                                 <label for="spell-1787" class="rogue-color">Stealth</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="spell-1857"/>
+                                <input type="checkbox" id="spell-1857" data-vanish />
                                 <a href="https://classic.wowhead.com/spell=1857/vanish" data-wowhead="buff"><img src="img/ability_vanish.jpg" alt="Vanish"/></a>
                                 <label for="spell-1857" class="rogue-color">Vanish</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-18461" data-vanish />
+                                <a href="https://classic.wowhead.com/spell=18461/vanish-purge"><img src="img/ability_vanish.jpg" alt="Vanish Purge"/></a>
+                                <label for="spell-18461" class="rogue-color">Vanish Purge</label>
+                                <a href="#vanish-purge" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="vanish-purge" data-info>Invisible buff lasting 1 second when Vanish is used.</small>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-14177"/>
