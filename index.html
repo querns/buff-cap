@@ -868,7 +868,7 @@
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-28810"/>
-                                <a href="https://classic.wowhead.com/spell=28810/armor-of-faith"><img src="img/classic_spell_holy_blessingofprotection.jpg" alt="T2 8pc Proc (gheal renew)"/></a>
+                                <a href="https://classic.wowhead.com/spell=28810/armor-of-faith" data-wowhead="buff"><img src="img/classic_spell_holy_blessingofprotection.jpg" alt="T2 8pc Proc (gheal renew)"/></a>
                                 <label for="spell-28810" class="priest-color">T3 4pc Proc (Armor of Faith)</label>
                             </li>
                         </ul>
@@ -926,11 +926,54 @@
                             <li><a href="https://classic.wowhead.com/spell=16237/ancestral-fortitude" class="shaman-color" data-wowhead="buff"><img src="img/spell_nature_undyingstrength.jpg" alt="Ancestral Fortitude" /> Ancestral Fortitude</a></li>
                         </ul>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-29203"/>
-                        <a href="https://classic.wowhead.com/spell=29203/healing-way" data-wowhead="buff"><img src="img/classic_spell_nature_healingway.jpg" alt="Healing Way"/></a>
-                        <label for="spell-29203" class="shaman-color">Healing Way</label>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_shaman.jpg" alt="Shaman Buffs" /> <span class="shaman-color">Shaman Buffs</span> <a href="#shaman-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse sub-section" id="shaman-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-29203"/>
+                                <a href="https://classic.wowhead.com/spell=29203/healing-way" data-wowhead="buff"><img src="img/classic_spell_nature_healingway.jpg" alt="Healing Way"/></a>
+                                <label for="spell-29203" class="shaman-color">Healing Way</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-23551"/>
+                                <a href="https://classic.wowhead.com/spell=23551/lightning-shield"><img src="img/inv_helmet_69.jpg" alt="8pc T2 proc (Lightning Shield)"/></a>
+                                <label for="spell-23551" class="shaman-color">8pc T2 proc (Lightning Shield)</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28823"/>
+                                <a href="https://classic.wowhead.com/spell=28823/totemic-power"><img src="img/inv_jewelry_ring_51naxxramas.jpg" alt="6pc T3 proc"/></a>
+                                <label for="spell-28823" class="shaman-color">6pc T3 proc</label>
+                                <a href="#totemic-power" data-toggle="collapse">▼</a>
+                                <ul class="collapse mb-sm-3" id="totemic-power">
+                                    <li>
+                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28824/totemic-power" data-wowhead="buff"><img src="img/spell_holy_spiritualguidence.jpg" alt="Mana Regen"/> Mana Regen</a>
+                                        <img src="img/classicon_shaman.jpg" alt="Given to Shaman"/>
+                                        <img src="img/classicon_priest.jpg" alt="Given to Priests"/>
+                                        <img src="img/classicon_druid.jpg" alt="Given to Druids"/>
+                                        <img src="img/classicon_paladin.jpg" alt="Given to Paladins"/>
+                                    </li>
+                                    <li>
+                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28826/totemic-power" data-wowhead="buff"><img src="img/spell_holy_devotion.jpg" alt="Attack Power"/> Attack Power</a>
+                                        <img src="img/classicon_rogue.jpg" alt="Given to Rogues"/>
+                                        <img src="img/classicon_hunter.jpg" alt="Given to Hunters"/>
+                                    </li>
+                                    <li>
+                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28825/totemic-power" data-wowhead="buff"><img src="img/spell_holy_holynova.jpg" alt="Spell Damage"/> Spell Damage</a>
+                                        <img src="img/classicon_mage.jpg" alt="Given to Mages"/>
+                                        <img src="img/classicon_warlock.jpg" alt="Given to Warlocks"/>
+                                    </li>
+                                    <li>
+                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28827/totemic-power" data-wowhead="buff"><img src="img/spell_magic_magearmor.jpg" alt="Armor"/> Armor</a>
+                                        <img src="img/classicon_warrior.jpg" alt="Given to Warriors"/>
+                                    </li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                        <div class="buff-summary"></div>
                     </div>
+
                     <!--Shaman Totems-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
@@ -957,19 +1000,24 @@
                                 <label for="spell-25360" class="priest-color">Grace of Air</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="spell-10599" />
-                                <a href="https://classic.wowhead.com/spell=10599/nature-resistance" data-wowhead="buff"><img src="img/spell_nature_natureresistancetotem.jpg" alt="Nature Resistance" /></a>
-                                <label for="spell-10599" class="priest-color">Nature Resistance</label>
-                            </li>
-                            <li>
                                 <input type="checkbox" id="spell-8178" />
                                 <a href="https://classic.wowhead.com/spell=8178/grounding-totem-effect" data-wowhead="buff"><img src="img/spell_nature_groundingtotem.jpg" alt="Grounding" /></a>
                                 <label for="spell-8178" class="priest-color">Grounding</label>
                             </li>
                             <li>
+                                <input type="checkbox" id="spell-10599" />
+                                <a href="https://classic.wowhead.com/spell=10599/nature-resistance" data-wowhead="buff"><img src="img/spell_nature_natureresistancetotem.jpg" alt="Nature Resistance" /></a>
+                                <label for="spell-10599" class="priest-color">Nature Resistance</label>
+                            </li>
+                            <li>
                                 <input type="checkbox" id="spell-25909" />
                                 <a href="https://classic.wowhead.com/spell=25909/tranquil-air" data-wowhead="buff"><img src="img/spell_nature_brilliance.jpg" alt="Tranquil Air" /></a>
                                 <label for="spell-25909" class="priest-color">Tranquil Air</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-15110" />
+                                <a href="https://classic.wowhead.com/spell=15110/windwall" data-wowhead="buff"><img src="img/spell_nature_earthbind.jpg" alt="Windwall" /></a>
+                                <label for="spell-15110" class="priest-color">Windwall</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-10535" />
@@ -1684,6 +1732,78 @@
                                 <input type="checkbox" id="spell-28814"/>
                                 <a href="https://classic.wowhead.com/spell=28814/revealed-flaw"><img src="img/ability_warrior_decisivestrike.jpg" alt="8pc T3 Proc"/></a>
                                 <label for="spell-28814" class="rogue-color">8pc T3 Proc</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Shaman Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_shaman.jpg" alt="Shaman Buffs" /> <span class="shaman-color">Shaman Buffs</span> <a href="#shaman-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="shaman-personal-buffs" data-class="warlock" data-parent="#personal-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-6196"/>
+                                <a href="https://classic.wowhead.com/spell=6196/far-sight" data-wowhead="buff"><img src="img/spell_nature_farsight.jpg" alt="Far Sight"/></a>
+                                <label for="spell-6196" class="shaman-color">Far Sight</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-2645"/>
+                                <a href="https://classic.wowhead.com/spell=2645/ghost-wolf" data-wowhead="buff"><img src="img/spell_nature_spiritwolf.jpg" alt="Ghost Wolf"/></a>
+                                <label for="spell-2645" class="shaman-color">Ghost Wolf</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10432"/>
+                                <a href="https://classic.wowhead.com/spell=10432/lightning-shield" data-wowhead="buff"><img src="img/spell_nature_lightningshield.jpg" alt="Lightning Shield"/></a>
+                                <label for="spell-10432" class="shaman-color">Lightning Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-6495"/>
+                                <a href="https://classic.wowhead.com/spell=6495/sentry-totem" data-wowhead="buff"><img src="img/spell_nature_removecurse.jpg" alt="Sentry Totem"/></a>
+                                <label for="spell-6495" class="shaman-color">Sentry Totem</label> <span class="inline-small priest-color">(Air)</span>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-131"/>
+                                <a href="https://classic.wowhead.com/spell=131/water-breathing" data-wowhead="buff"><img src="img/spell_shadow_demonbreath.jpg" alt="Water Breathing"/></a>
+                                <label for="spell-131" class="shaman-color">Water Breathing</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-546"/>
+                                <a href="https://classic.wowhead.com/spell=546/water-walking" data-wowhead="buff"><img src="img/spell_frost_windwalkon.jpg" alt="Water Walking"/></a>
+                                <label for="spell-546" class="shaman-color">Water Walking</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16246"/>
+                                <a href="https://classic.wowhead.com/spell=16246/clearcasting" data-wowhead="buff"><img src="img/spell_shadow_manaburn.jpg" alt="Elemental Focus"/></a>
+                                <label for="spell-16246" class="shaman-color">Elemental Focus</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29063"/>
+                                <a href="https://classic.wowhead.com/spell=29063/focused-casting" data-wowhead="buff"><img src="img/spell_nature_eyeofthestorm.jpg" alt="Eye of the Storm"/></a>
+                                <label for="spell-29063" class="shaman-color">Eye of the Storm</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-30160"/>
+                                <a href="https://classic.wowhead.com/spell=30160/elemental-devastation"><img src="img/classic_spell_fire_elementaldevastation.jpg" alt="Elemental Devastation"/></a>
+                                <label for="spell-30160" class="shaman-color">Elemental Devastation</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16166"/>
+                                <a href="https://classic.wowhead.com/spell=16166/elemental-mastery" data-wowhead="buff"><img src="img/spell_nature_wispheal.jpg" alt="Elemental Mastery"/></a>
+                                <label for="spell-16166" class="shaman-color">Elemental Mastery</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16280"/>
+                                <a href="https://classic.wowhead.com/spell=16280/flurry" data-wowhead="buff"><img src="img/ability_ghoulfrenzy.jpg" alt="Flurry"/></a>
+                                <label for="spell-16280" class="shaman-color">Flurry</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16188"/>
+                                <a href="https://classic.wowhead.com/spell=16188/natures-swiftness" data-wowhead="buff"><img src="img/spell_nature_ravenform.jpg" alt="Nature's Swiftness"/></a>
+                                <label for="spell-16188" class="shaman-color">Nature's Swiftness</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-26119"/>
+                                <a href="https://classic.wowhead.com/spell=26119/stormcaller-spelldamage-bonus"><img src="img/inv_helmet_73.jpg" alt="3pc AQ40 set proc (Stormcaller's Wrath)"/></a>
+                                <label for="spell-26119" class="shaman-color">3pc AQ40 set proc</label>
                             </li>
                         </ul>
                     </div>
