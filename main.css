@@ -58,7 +58,7 @@ label, small {
   user-select: none;
 }
 
-.buff-count {
+.buff-count, .stacking-count {
   display: inline-block;
   width: 18px;
   height: 18px;
@@ -161,6 +161,11 @@ button[aria-expanded=false] .collapse-icon-open {
 }
 .bc-cell-header button {
   width: 4rem;
+}
+
+.stacking-ui button {
+  display: none;
+  transform: scale(0.75);
 }
 
 /*# sourceMappingURL=main.css.map */

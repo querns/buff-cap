@@ -13,9 +13,22 @@ function calculateTotalBuffs() {
             const id = $(element).prop("id");
             const match = id.match(/spell-(\d+)/);
             if (match) {
-                const spellID = match[1];
-                selectedBuffs.push(spellID);
+                selectedBuffs.push(match[1]);
             }
+        }
+    });
+    $("input[type='hidden']").each((index, element) => {
+        const id = $(element).prop("id");
+        const match = id.match(/spell-(\d+)/);
+        const stackingCount = parseInt($(element).val());
+
+        if (!match || isNaN(stackingCount)) {
+            return;
+        }
+
+        count += stackingCount;
+        for (let i = 0; i < stackingCount; i++) {
+            selectedBuffs.push(match[1]);
         }
     });
 
@@ -101,9 +114,25 @@ function loadBuffsFromURL() {
             int8Array[i] = raw.charCodeAt(i);
         }
 
+        // If the page is refreshed, input values are carried over, causing duplication of stackable buffs.
+        $("input[type='hidden']").val(0);
+
         const int16Array = new Uint16Array(int8Array.buffer);
         int16Array.forEach(buff => {
-            $(`#spell-${buff}`).prop("checked", true);
+            // Backwards compatibility for Crusader. Crusader (off-hand) used to be a separate buff. Now that it is a
+            // stackable buff, convert it to the proper and only spell ID for Crusader.
+            if (buff === 20034) {
+                buff = 20007;
+            }
+
+            const spellInput = $(`#spell-${buff}`);
+            if (spellInput.is(":checkbox")) {
+                spellInput.prop("checked", true);
+            } else if (spellInput.is(":hidden")) {
+                const newCount = parseInt(spellInput.val()) + 1;
+                spellInput.val(newCount);
+                spellInput.closest(".stacking-buff").find(".stacking-count").text(newCount);
+            }
         });
         $(".has-buff-count").each((index, element) => {
             calculateSubSection($(element).find("input[type='checkbox']").first());
@@ -120,7 +149,9 @@ String.prototype.capitalize = function() {
 (() => {
     $("#clear-all").click(() => {
         $("input[type='checkbox']").prop("checked", false);
+        $("input[type='hidden']").val(0);
         calculateTotalBuffs();
+        $(".stacking-count").text("");
         $(".buff-count").text("");
         $(".buff-summary").empty();
     });
@@ -129,7 +160,10 @@ String.prototype.capitalize = function() {
         $(e.currentTarget).closest(".bc-cell")
             .find("input[type='checkbox']").prop("checked", false).end()
             .find(".buff-count").text("").end()
-            .find(".buff-summary").empty();
+            .find(".buff-summary").empty().end()
+            .find("input[type='hidden']").val(0).end()
+            .find(".stacking-count").text("")
+        ;
 
         if ($(e.currentTarget).closest(".bc-cell").attr("id") === "personal-buffs") {
             $("#personal-buffs .has-buff-count").find(".collapse").collapse("hide");
@@ -199,6 +233,38 @@ String.prototype.capitalize = function() {
         }
 
         calculateTotalBuffs();
+    });
+
+    $(".stacking-buff button").click(e => {
+        const amount = $(e.currentTarget).data("amount");
+        const input = $(e.currentTarget).closest(".stacking-buff").find("input[type='hidden']");
+        const countElement = $(e.currentTarget).closest(".stacking-buff").find(".stacking-count");
+
+        let newValue = parseInt(input.val()) + amount;
+
+        if (newValue <= 0) {
+            newValue = 0;
+            countElement.text("");
+        } else {
+            countElement.text(newValue);
+        }
+
+        input.val(newValue);
+        calculateTotalBuffs();
+    });
+
+    $(".stacking-count").click(e => {
+        $(e.currentTarget).text("");
+        $(e.currentTarget).closest(".stacking-buff").find("input").val(0);
+        calculateTotalBuffs();
+    });
+
+    $(".stacking-buff").mouseenter(e => {
+        $(e.currentTarget).find("label").hide().end()
+            .find("button").show();
+    }).mouseleave(e => {
+        $(e.currentTarget).find("button").hide().end()
+            .find("label").show();
     });
 
     $(document).on("show.bs.collapse", (e) => {

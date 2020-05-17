@@ -234,10 +234,17 @@
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-27572"/>
+                    <div class="stacking-buff">
+                        <span class="stacking-count" data-toggle="tooltip" data-html="true" title="This buff can be acquired multiple times.">&nbsp;</span>
+                        <input type="hidden" id="spell-27572" value="0" />
                         <a href="https://classic.wowhead.com/spell=27572/smitten" data-wowhead="buff"><img src="img/inv_ammo_arrow_02.jpg" alt="Smitten"/></a>
-                        <label for="spell-27572">Smitten</label>
+                        <span class="stacking-ui">
+                            <label for="spell-27572">Smitten</label>
+                            <button type="button" data-amount="1" class="btn btn-sm btn-primary">&plus;</button>
+                            <button type="button" data-amount="-1" class="btn btn-sm btn-secondary">&ndash;</button>
+                        </span>
+                        <a href="#smitten" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="smitten">Layer hopping allows for acquiring multiple buffs.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-29332"/>
@@ -304,17 +311,17 @@
                     <button class="ml-3 btn-sm btn-secondary float-right" data-clear-button>Clear</button>
                 </div>
                 <div id="equipment-buffs" class="collapse show">
-                    <div>
-                        <input type="checkbox" id="spell-20007"/>
-                        <a href="https://classic.wowhead.com/spell=20007/holy-strength" data-wowhead="buff"><img src="img/spell_holy_blessingofstrength.jpg" alt="Crusader (Main Hand)"/></a>
-                        <label for="spell-20007">Crusader (Main Hand)</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-20034"/>
-                        <a href="https://classic.wowhead.com/spell=20007/holy-strength" data-wowhead="buff"><img src="img/spell_holy_blessingofstrength.jpg" alt="Crusader (Off Hand)"/></a>
-                        <label for="spell-20034">Crusader (Off Hand)</label>
+                    <div class="stacking-buff">
+                        <span class="stacking-count" data-toggle="tooltip" data-html="true" title="This buff can be acquired multiple times.">&nbsp;</span>
+                        <input type="hidden" id="spell-20007" value="0"/>
+                        <a href="https://classic.wowhead.com/spell=20007/holy-strength" data-wowhead="buff"><img src="img/spell_holy_blessingofstrength.jpg" alt="Crusader"/></a>
+                        <span class="stacking-ui">
+                            <label for="spell-20007">Crusader</label>
+                            <button type="button" data-amount="1" class="btn btn-sm btn-primary">&plus;</button>
+                            <button type="button" data-amount="-1" class="btn btn-sm btn-secondary">&ndash;</button>
+                        </span>
                         <a href="#crusader" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
-                        <small class="collapse mb-sm-3" id="crusader">Crusader buffs from both weapons<br/>stack and each consumes a buff.<br/>Swapping weapons can generate 3+ procs.<br/>I have to draw the line somewhere.</small>
+                        <small class="collapse mb-sm-3" id="crusader">Main hand and off-hand procs are separate and stack.<br/>3+ procs are possible with weapon swapping.</small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-7218"/>
