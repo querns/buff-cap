@@ -98,7 +98,7 @@
                         <label for="spell-1386">Echoes of Lordaeron</label>
                     </div>
                     <div class="has-buff-count">
-                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Some members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/spell_shadow_shadowworddominate.jpg" alt="Mind Control Buffs" /> Mind Control Buffs
                         <a href="#mind-control-buffs" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3 sub-section" id="mind-control-buffs">
@@ -125,6 +125,16 @@
                                 </small>
                             </li>
                             <li>
+                                <input type="checkbox" id="spell-15288"/>
+                                <a href="https://classic.wowhead.com/spell=15288/fury-of-ragnaros" data-wowhead="buff"><img src="img/spell_holy_mindsooth.jpg" alt="Fury of Ragnaros"/></a>
+                                <label for="spell-15288">Fury of Ragnaros</label>
+                                <a href="#fury-of-ragnaros" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="fury-of-ragnaros">
+                                    Mind control a <a href="https://classic.wowhead.com/npc=8913/twilight-emissary" data-info>Twilight Emissary</a> in BRD.<br/>
+                                    Doesn't stack with <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir" data-info>Greater Arcane Elixir</a>.
+                                </small>
+                            </li>
+                            <li>
                                 <input type="checkbox" id="spell-16587"/>
                                 <a href="https://classic.wowhead.com/spell=16587/dark-whispers" data-wowhead="buff"><img src="img/spell_shadow_haunting.jpg" alt="Dark Whispers"/></a>
                                 <label for="spell-16587">Dark Whispers</label>
@@ -134,13 +144,16 @@
                                 </small>
                             </li>
                             <li>
-                                <input type="checkbox" id="spell-15288"/>
-                                <a href="https://classic.wowhead.com/spell=15288/fury-of-ragnaros" data-wowhead="buff"><img src="img/spell_holy_mindsooth.jpg" alt="Fury of Ragnaros"/></a>
-                                <label for="spell-15288">Fury of Ragnaros</label>
-                                <a href="#fury-of-ragnaros" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
-                                <small class="collapse mb-sm-3" id="fury-of-ragnaros">
-                                    Mind control a <a href="https://classic.wowhead.com/npc=8913/twilight-emissary" data-info>Twilight Emissary</a> in BRD.<br/>
-                                    Doesn't stack with <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir" data-info>Greater Arcane Elixir</a>.
+                                <input type="checkbox" id="spell-17150"/>
+                                <a href="https://classic.wowhead.com/spell=17150/arcane-might" data-wowhead="buff"><img src="img/spell_holy_mindsooth.jpg" alt="Arcane Might"/></a>
+                                <label for="spell-17150">Arcane Might</label>
+                                <a href="#arcane-might" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="arcane-might">
+                                    MC a <a href="https://classic.wowhead.com/npc=10422/crimson-sorcerer" data-info>Crimson Sorcerer</a> in Strat Live.<br/>
+                                    Doesn't stack with <a href="https://classic.wowhead.com/item=13454/greater-arcane-elixir" data-info>Greater Arcane Elixir</a>.<br />
+                                    Priest Mind Control <b>DOES NOT WORK</b>.<br />
+                                    Use an <a href="https://classic.wowhead.com/item=10726/gnomish-mind-control-cap">MC cap</a>.<br />
+                                    <a class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#arcane-might-explanation">Click for more info.</a>
                                 </small>
                             </li>
                         </ul>
@@ -2035,6 +2048,47 @@
                 Valentine's Day Collections, Zanza Potions, and Blasted Lands consumables are all mutually exclusive.
                 They don't stack, and consuming one of these types of items will overwrite the buff from one you may
                 have taken previously.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" tabindex="-1" role="dialog" id="arcane-might-explanation">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Arcane Might</h4>
+                <button type="button" class="close text-light" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-justify">
+                <p>
+                    <a href="https://classic.wowhead.com/spell=17150/arcane-might" data-wowhead="buff">Arcane Might</a>
+                    is a buff available from <a href="https://classic.wowhead.com/npc=10422/crimson-sorcerer">Crimson
+                    Sorcerers</a> in Stratholme (Live Side.)
+                </p>
+                <p>
+                    Acquiring Arcane Might requires unusual action. Priests employing their Mind Control ability
+                    <b>CANNOT</b> cast this buff. In order to acquire this buff, a
+                    <a href="https://classic.wowhead.com/item=10726/gnomish-mind-control-cap">Gnomish Mind Control Cap</a>
+                    must be employed. Use it on the Crimson Sorcerer, and wait a few seconds. The NPC should buff you
+                    with the ability shortly.
+                </p>
+                <p>
+                    The exact mechanics in play here are not known to me at this time. If I had to guess, it is because
+                    of the pet bar UI. Crimson Sorcerers have <a href="https://classicdb.ch/?npc=10422#abilities">five
+                    abilities</a>, and the pet bar only has room for four. Even though the pet bar UI is used when a
+                    priest uses his or her Mind Control ability, direct movement control of the NPC is granted to the
+                    priest. This prevents the NPC from auto-casting its abilities. Conversely, a Gnomish Mind Control cap
+                    makes the NPC your pet, and it is free to auto-cast its abilities.
+                </p>
+                <p>
+                    I speculate that it may be possible for a priest to use this ability. For example, the priest may be
+                    able to use a macro like <code>/cast Arcane Might</code> to force a cast, or the ability might be
+                    available from the spellbook in a Pet section, much like warlock pet abilities. If you have proof
+                    of either of these methods working, or any other method, contact Querns in FC, or
+                    <a href="https://github.com/querns/buff-cap/issues">open a ticket.</a> Video proof would be ideal.
+                </p>
             </div>
         </div>
     </div>
