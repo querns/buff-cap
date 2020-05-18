@@ -168,4 +168,8 @@ button[aria-expanded=false] .collapse-icon-open {
   transform: scale(0.75);
 }
 
+.stacking-count {
+  user-select: none;
+}
+
 /*# sourceMappingURL=main.css.map */

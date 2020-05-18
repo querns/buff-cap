@@ -235,10 +235,9 @@ String.prototype.capitalize = function() {
         calculateTotalBuffs();
     });
 
-    $(".stacking-buff button").click(e => {
-        const amount = $(e.currentTarget).data("amount");
-        const input = $(e.currentTarget).closest(".stacking-buff").find("input[type='hidden']");
-        const countElement = $(e.currentTarget).closest(".stacking-buff").find(".stacking-count");
+    function changeStackingBuffAmount(currentTarget, amount) {
+        const input = $(currentTarget).closest(".stacking-buff").find("input[type='hidden']");
+        const countElement = $(currentTarget).closest(".stacking-buff").find(".stacking-count");
 
         let newValue = parseInt(input.val()) + amount;
 
@@ -251,21 +250,19 @@ String.prototype.capitalize = function() {
 
         input.val(newValue);
         calculateTotalBuffs();
-    });
+    }
 
-    $(".stacking-count").click(e => {
-        $(e.currentTarget).text("");
-        $(e.currentTarget).closest(".stacking-buff").find("input").val(0);
-        calculateTotalBuffs();
-    });
-
-    $(".stacking-buff").mouseenter(e => {
-        $(e.currentTarget).find("label").hide().end()
-            .find("button").show();
-    }).mouseleave(e => {
-        $(e.currentTarget).find("button").hide().end()
-            .find("label").show();
-    });
+    $(".stacking-count, .stacking-buff label")
+        .click(e => changeStackingBuffAmount(e.currentTarget, 1))
+        .contextmenu(e => {
+            changeStackingBuffAmount(e.currentTarget, -1);
+            e.preventDefault();
+            return false;
+        })
+        .tooltip({
+            html: true,
+            title: "This buff can be acquired multiple times.<br />Left click: Add 1<br />Right click: Subtract 1",
+        });
 
     $(document).on("show.bs.collapse", (e) => {
         $(e.target).closest(".has-buff-count").find(".buff-summary").hide();

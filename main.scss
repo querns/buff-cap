@@ -179,3 +179,7 @@ button[aria-expanded=false] .collapse-icon-open {
   display: none;
   transform: scale(0.75);
 }
+
+.stacking-count {
+  user-select: none;
+}
