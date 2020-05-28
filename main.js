@@ -119,10 +119,12 @@ function loadBuffsFromURL() {
 
         const int16Array = new Uint16Array(int8Array.buffer);
         int16Array.forEach(buff => {
-            // Backwards compatibility for Crusader. Crusader (off-hand) used to be a separate buff. Now that it is a
-            // stackable buff, convert it to the proper and only spell ID for Crusader.
             if (buff === 20034) {
+                // Backwards compatibility for Crusader.
                 buff = 20007;
+            } else if (buff === 24658) {
+                // Backwards compatibility for Trinket 1 and 2.
+                buff = 24427;
             }
 
             const spellInput = $(`#spell-${buff}`);
@@ -238,16 +240,10 @@ String.prototype.capitalize = function() {
     function changeStackingBuffAmount(currentTarget, amount) {
         const input = $(currentTarget).closest(".stacking-buff").find("input[type='hidden']");
         const countElement = $(currentTarget).closest(".stacking-buff").find(".stacking-count");
+        const maximum = $(input).data("maximum") || Number.MAX_SAFE_INTEGER;
+        const newValue = Math.max(0, Math.min(parseInt(input.val()) + amount, maximum));
 
-        let newValue = parseInt(input.val()) + amount;
-
-        if (newValue <= 0) {
-            newValue = 0;
-            countElement.text("");
-        } else {
-            countElement.text(newValue);
-        }
-
+        countElement.text(newValue === 0 ? "" : newValue);
         input.val(newValue);
         calculateTotalBuffs();
     }

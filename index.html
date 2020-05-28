@@ -355,15 +355,16 @@
                         <a href="https://classic.wowhead.com/item=7969/mithril-spurs"><img src="img/ability_rogue_sprint.jpg" alt="Mithril Spurs"/></a>
                         <label for="spell-9783">Mithril Spurs</label>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-24658"/>
-                        <a href="https://classic.wowhead.com/item=19950/zandalarian-hero-charm"><img src="img/inv_jewelry_necklace_13.jpg" alt="Trinket 1"/></a>
-                        <label for="spell-24658">Trinket 1</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-24427"/>
-                        <a href="https://classic.wowhead.com/item=20130/diamond-flask"><img src="img/inv_drink_01.jpg" alt="Trinket 2"/></a>
-                        <label for="spell-24427">Trinket 2</label>
+                    <div class="stacking-buff">
+                        <span class="stacking-count">&nbsp;</span>
+                        <input type="hidden" id="spell-24427" value="0" data-maximum="4"/>
+                        <a href="https://classic.wowhead.com/item=20130/diamond-flask"><img src="img/inv_drink_01.jpg" alt="On-Use Trinket"/></a>
+                        <label for="spell-24427">On-Use Trinket</label>
+                        <a href="#on-use-trinket" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="on-use-trinket">
+                            <a href="https://classic.wowhead.com/item=21670/badge-of-the-swarmguard">Some trinkets</a> have more than one buff.<br />
+                            Up to four on-use trinket buffs can be applied.
+                        </small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-12418"/>
