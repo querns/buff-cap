@@ -944,6 +944,7 @@
                             <li><a href="https://classic.wowhead.com/spell=16237/ancestral-fortitude" class="shaman-color" data-wowhead="buff"><img src="img/spell_nature_undyingstrength.jpg" alt="Ancestral Fortitude" /> Ancestral Fortitude</a></li>
                         </ul>
                     </div>
+                    <!--Shaman Buffs-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/classicon_shaman.jpg" alt="Shaman Buffs" /> <span class="shaman-color">Shaman Buffs</span> <a href="#shaman-buffs" data-toggle="collapse">▼</a>
@@ -962,28 +963,27 @@
                                 <input type="checkbox" id="spell-28823"/>
                                 <a href="https://classic.wowhead.com/spell=28823/totemic-power"><img src="img/inv_jewelry_ring_51naxxramas.jpg" alt="6pc T3 proc"/></a>
                                 <label for="spell-28823" class="shaman-color">6pc T3 proc</label>
-                                <a href="#totemic-power" data-toggle="collapse">▼</a>
+                                <a href="#totemic-power" data-info data-toggle="collapse">▼</a>
                                 <ul class="collapse mb-sm-3" id="totemic-power">
                                     <li>
-                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28824/totemic-power" data-wowhead="buff"><img src="img/spell_holy_spiritualguidence.jpg" alt="Mana Regen"/> Mana Regen</a>
-                                        <img src="img/classicon_shaman.jpg" alt="Given to Shaman"/>
-                                        <img src="img/classicon_priest.jpg" alt="Given to Priests"/>
-                                        <img src="img/classicon_druid.jpg" alt="Given to Druids"/>
-                                        <img src="img/classicon_paladin.jpg" alt="Given to Paladins"/>
+                                        <a class="shaman-color small-inline" data-info href="https://classic.wowhead.com/spell=28824/totemic-power" data-wowhead="buff"><img src="img/spell_holy_spiritualguidence.jpg" alt="Mana Regen"/> Mana Regen</a>
+                                        <img src="img/classicon_shaman.jpg" alt="Given to Shaman" data-info/>
+                                        <img src="img/classicon_priest.jpg" alt="Given to Priests" data-info/>
+                                        <img src="img/classicon_druid.jpg" alt="Given to Druids" data-info/>
                                     </li>
                                     <li>
-                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28826/totemic-power" data-wowhead="buff"><img src="img/spell_holy_devotion.jpg" alt="Attack Power"/> Attack Power</a>
-                                        <img src="img/classicon_rogue.jpg" alt="Given to Rogues"/>
-                                        <img src="img/classicon_hunter.jpg" alt="Given to Hunters"/>
+                                        <a class="shaman-color small-inline" data-info href="https://classic.wowhead.com/spell=28826/totemic-power" data-wowhead="buff"><img src="img/spell_holy_devotion.jpg" alt="Attack Power"/> Attack Power</a>
+                                        <img src="img/classicon_rogue.jpg" alt="Given to Rogues" data-info/>
+                                        <img src="img/classicon_hunter.jpg" alt="Given to Hunters" data-info/>
                                     </li>
                                     <li>
-                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28825/totemic-power" data-wowhead="buff"><img src="img/spell_holy_holynova.jpg" alt="Spell Damage"/> Spell Damage</a>
-                                        <img src="img/classicon_mage.jpg" alt="Given to Mages"/>
-                                        <img src="img/classicon_warlock.jpg" alt="Given to Warlocks"/>
+                                        <a class="shaman-color small-inline" data-info href="https://classic.wowhead.com/spell=28825/totemic-power" data-wowhead="buff"><img src="img/spell_holy_holynova.jpg" alt="Spell Damage"/> Spell Damage</a>
+                                        <img src="img/classicon_mage.jpg" alt="Given to Mages" data-info/>
+                                        <img src="img/classicon_warlock.jpg" alt="Given to Warlocks" data-info/>
                                     </li>
                                     <li>
-                                        <a class="shaman-color small-inline" href="https://classic.wowhead.com/spell=28827/totemic-power" data-wowhead="buff"><img src="img/spell_magic_magearmor.jpg" alt="Armor"/> Armor</a>
-                                        <img src="img/classicon_warrior.jpg" alt="Given to Warriors"/>
+                                        <a class="shaman-color small-inline" data-info href="https://classic.wowhead.com/spell=28827/totemic-power" data-wowhead="buff"><img src="img/spell_magic_magearmor.jpg" alt="Armor"/> Armor</a>
+                                        <img src="img/classicon_warrior.jpg" alt="Given to Warriors" data-info/>
                                     </li>
                                 </ul>
                             </li>
@@ -991,7 +991,6 @@
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
-
                     <!--Shaman Totems-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
@@ -1095,6 +1094,11 @@
                                 <a href="https://classic.wowhead.com/spell=19896/shadow-resistance-aura" data-wowhead="buff"><img src="img/spell_shadow_sealofkings.jpg" alt="Shadow Resistance"/></a>
                                 <label for="spell-19896" class="paladin-color">Shadow Resistance</label>
                             </li>
+                            <li>
+                                <input type="checkbox" id="spell-20218"/>
+                                <a href="https://classic.wowhead.com/spell=20218/sanctity-aura" data-wowhead="buff"><img src="img/spell_holy_mindvision.jpg" alt="Sanctity"/></a>
+                                <label for="spell-20218" class="paladin-color">Sanctity</label>
+                            </li>
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
@@ -1151,10 +1155,51 @@
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-20236"/>
-                        <a href="https://classic.wowhead.com/spell=20236/lay-on-hands" data-wowhead="buff&amp;lvl=55"><img src="img/spell_holy_layonhands.jpg" alt="Improved Lay On Hands"/></a>
-                        <label for="spell-20236" class="paladin-color">Improved Lay On Hands</label>
+                    <!--Paladin Buffs-->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/spell_holy_layonhands.jpg" alt="Paladin Buffs" /> <span class="paladin-color">Paladin Buffs</span> <a href="#paladin-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="paladin-buffs">
+                            <li>
+                                <input type="checkbox" id="spell-20236"/>
+                                <a href="https://classic.wowhead.com/spell=20236/lay-on-hands" data-wowhead="buff&amp;lvl=55"><img src="img/spell_holy_layonhands.jpg" alt="Improved Lay On Hands"/></a>
+                                <label for="spell-20236" class="paladin-color">Improved Lay On Hands</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-19752"/>
+                                <a href="https://classic.wowhead.com/spell=19752/divine-intervention" data-wowhead="buff"><img src="img/spell_nature_timestop.jpg" alt="Divine Intervention"/></a>
+                                <label for="spell-19752" class="paladin-color">Divine Intervention</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28789"/>
+                                <a href="https://classic.wowhead.com/spell=28789/holy-power"><img src="img/inv_jewelry_ring_51naxxramas.jpg" alt="6pc T3 proc"/></a>
+                                <label for="spell-28789" class="paladin-color">6pc T3 proc</label>
+                                <a href="#holy-power" data-toggle="collapse" data-info="">▼</a>
+                                <ul class="collapse mb-sm-3" id="holy-power">
+                                    <li>
+                                        <a class="paladin-color small-inline" data-info href="https://classic.wowhead.com/spell=28795/holy-power" data-wowhead="buff"><img src="img/spell_holy_spiritualguidence.jpg" alt="Mana Regen"/> Mana Regen</a>
+                                        <img src="img/classicon_priest.jpg" alt="Given to Priests" data-info/>
+                                        <img src="img/classicon_druid.jpg" alt="Given to Druids" data-info/>
+                                        <img src="img/classicon_paladin.jpg" alt="Given to Paladins" data-info/>
+                                    </li>
+                                    <li>
+                                        <a class="paladin-color small-inline" data-info href="https://classic.wowhead.com/spell=28791/holy-power" data-wowhead="buff"><img src="img/spell_holy_devotion.jpg" alt="Attack Power"/> Attack Power</a>
+                                        <img src="img/classicon_rogue.jpg" alt="Given to Rogues" data-info/>
+                                        <img src="img/classicon_hunter.jpg" alt="Given to Hunters" data-info/>
+                                    </li>
+                                    <li>
+                                        <a class="paladin-color small-inline" data-info href="https://classic.wowhead.com/spell=28793/holy-power" data-wowhead="buff"><img src="img/spell_holy_holynova.jpg" alt="Spell Damage"/> Spell Damage</a>
+                                        <img src="img/classicon_mage.jpg" alt="Given to Mages" data-info/>
+                                        <img src="img/classicon_warlock.jpg" alt="Given to Warlocks" data-info/>
+                                    </li>
+                                    <li>
+                                        <a class="paladin-color small-inline" data-info href="https://classic.wowhead.com/spell=28790/holy-power" data-wowhead="buff"><img src="img/spell_magic_magearmor.jpg" alt="Armor"/> Armor</a>
+                                        <img src="img/classicon_warrior.jpg" alt="Given to Warriors" data-info/>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <div class="buff-summary"></div>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-23060"/>
@@ -1230,17 +1275,18 @@
                         <label for="spell-1494">Tracking / Find ___</label>
                         <a href="#tracking" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3" id="tracking">
-                            <li><a href="https://classic.wowhead.com/spell=1494/track-beasts"><img src="img/ability_tracking.jpg" alt="Track Beasts" /> Track Beasts</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19883/track-humanoids"><img src="img/spell_holy_prayerofhealing.jpg" alt="Track Humanoids" /> Track Humanoids</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19879/track-dragonkin"><img src="img/inv_misc_head_dragon_01.jpg" alt="Track Dragonkin" /> Track Dragonkin</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19885/track-hidden"><img src="img/ability_stealth.jpg" alt="Track Hidden" /> Track Hidden</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19884/track-undead"><img src="img/spell_shadow_darksummoning.jpg" alt="Track Undead" /> Track Undead</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19882/track-giants"><img src="img/ability_racial_avatar.jpg" alt="Track Giants" /> Track Giants</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19878/track-demons"><img src="img/spell_shadow_summonfelhunter.jpg" alt="Track Demons" /> Track Demons</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=19880/track-elementals"><img src="img/spell_frost_summonwaterelemental.jpg" alt="Track Elementals" /> Track Elementals</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=1494/track-beasts" class="hunter-color"><img src="img/ability_tracking.jpg" alt="Track Beasts" /> Track Beasts</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19883/track-humanoids"><img src="img/spell_holy_prayerofhealing.jpg" alt="Track Humanoids" /> <span class="hunter-color">Track</span> <span class="druid-color">Humanoids</span></a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19879/track-dragonkin" class="hunter-color"><img src="img/inv_misc_head_dragon_01.jpg" alt="Track Dragonkin" /> Track Dragonkin</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19885/track-hidden" class="hunter-color"><img src="img/ability_stealth.jpg" alt="Track Hidden" /> Track Hidden</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19884/track-undead" class="hunter-color"><img src="img/spell_shadow_darksummoning.jpg" alt="Track Undead" /> Track Undead</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19882/track-giants" class="hunter-color"><img src="img/ability_racial_avatar.jpg" alt="Track Giants" /> Track Giants</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19878/track-demons" class="hunter-color"><img src="img/spell_shadow_summonfelhunter.jpg" alt="Track Demons" /> Track Demons</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=19880/track-elementals" class="hunter-color"><img src="img/spell_frost_summonwaterelemental.jpg" alt="Track Elementals" /> Track Elementals</a></li>
                             <li><a href="https://classic.wowhead.com/spell=2383/find-herbs"><img src="img/inv_misc_flower_02.jpg" alt="Find Herbs" /> Find Herbs</a></li>
                             <li><a href="https://classic.wowhead.com/spell=2580/find-minerals"><img src="img/spell_nature_earthquake.jpg" alt="Find Minerals" /> Find Minerals</a></li>
                             <li><a href="https://classic.wowhead.com/spell=2481/find-treasure"><img src="img/racial_dwarf_findtreasure.jpg" alt="Find Treasure" /> Find Treasure</a></li>
+                            <li><a href="https://classic.wowhead.com/spell=5502/sense-undead" class="paladin-color"><img src="img/spell_holy_senseundead.jpg" alt="Sense Undead" /> Sense Undead</a></li>
                         </ul>
                     </div>
                     <div>
@@ -1620,6 +1666,59 @@
                                 <input type="checkbox" id="spell-130"/>
                                 <a href="https://classic.wowhead.com/spell=130/slow-fall" data-wowhead="buff"><img src="img/spell_magic_featherfall.jpg" alt="Slow Fall"/></a>
                                 <label for="spell-130" class="mage-color">Slow Fall</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--Paladin Buffs -->
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/classicon_paladin.jpg" alt="Paladin Buffs" /> <span class="paladin-color">Paladin Buffs</span> <a href="#paladin-personal-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section personal-buffs" id="paladin-personal-buffs" data-class="mage" data-parent="#personal-buffs">
+                            <li>
+                                <small>
+                                    This list was assembled by looking at<br />Wowhead and with some assumptions.<br />
+                                    Open an issue on <a class="small-inline" href="https://github.com/querns/buff-cap/issues">Github</a> if I've made a<br />
+                                    mistake or missed something.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-20293"/>
+                                <img src="img/ability_thunderbolt.jpg" alt="Seal of..."/>
+                                <label for="spell-20293" class="paladin-color">Seal of...</label>
+                                <a href="#paladin-seals" data-toggle="collapse">▼</a>
+                                <ul class="collapse" id="paladin-seals" data-info>
+                                    <li><a href="https://classic.wowhead.com/spell=20293/seal-of-righteousness" data-wowhead="buff"><img src="img/ability_thunderbolt.jpg" alt="Seal of Righteousness" class="paladin-color"/> ... Righteousness</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20308/seal-of-the-crusader" data-wowhead="buff"><img src="img/spell_holy_holysmite.jpg" alt="Seal of the Crusader" class="paladin-color"/> ... the Crusader</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20349/seal-of-light" data-wowhead="buff"><img src="img/spell_holy_healingaura.jpg" alt="Seal of Light" class="paladin-color"/> ... Light</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20357/seal-of-wisdom" data-wowhead="buff"><img src="img/spell_holy_righteousnessaura.jpg" alt="Seal of Wisdom" class="paladin-color"/> ... Wisdom</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20164/seal-of-justice" data-wowhead="buff"><img src="img/spell_holy_sealofwrath.jpg" alt="Seal of Justice" class="paladin-color"/> ... Justice</a></li>
+                                    <li><a href="https://classic.wowhead.com/spell=20920/seal-of-command" data-wowhead="buff"><img src="img/ability_warrior_innerrage.jpg" alt="Seal of Command" class="paladin-color"/> ... Command</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-1020"/>
+                                <a href="https://classic.wowhead.com/spell=1020/divine-shield" data-wowhead="buff"><img src="img/spell_holy_divineintervention.jpg" alt="Divine Shield"/></a>
+                                <label for="spell-1020" class="paladin-color">Divine Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25780"/>
+                                <a href="https://classic.wowhead.com/spell=25780/righteous-fury" data-wowhead="buff"><img src="img/spell_holy_sealoffury.jpg" alt="Righteous Fury"/></a>
+                                <label for="spell-25780" class="paladin-color">Righteous Fury</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-20216"/>
+                                <a href="https://classic.wowhead.com/spell=20216/divine-favor" data-wowhead="buff"><img src="img/spell_holy_heal.jpg" alt="Divine Favor"/></a>
+                                <label for="spell-20216" class="paladin-color">Divine Favor</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-20925"/>
+                                <a href="https://classic.wowhead.com/spell=20925/holy-shield" data-wowhead="buff"><img src="img/classic_spell_holy_blessingofprotection.jpg" alt="Holy Shield"/></a>
+                                <label for="spell-20925" class="paladin-color">Holy Shield</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-27499"/>
+                                <a href="https://classic.wowhead.com/spell=27499/crusaders-wrath" data-wowhead="buff"><img src="img/spell_nature_groundingtotem.jpg" alt="6pc T0/T0.5 Proc"/></a>
+                                <label for="spell-27499" class="paladin-color">6pc T0/T0.5 Proc</label>
                             </li>
                         </ul>
                     </div>
