@@ -190,15 +190,17 @@ String.prototype.capitalize = function() {
 
         if (currentTarget.closest("#personal-buffs").length > 0) {
             const clickedClassType = $(e.currentTarget).closest("[data-class]").data("class");
-            const foreignPersonalBuffs = $(`#personal-buffs ul[data-class!='${clickedClassType}']`).find("input[type='checkbox']:checked")
+            if (clickedClassType !== undefined) {
+                const foreignPersonalBuffs = $(`#personal-buffs ul[data-class!='${clickedClassType}']`).find("input[type='checkbox']:checked")
 
-            if (foreignPersonalBuffs.length > 0) {
-                foreignPersonalBuffs.prop("checked", false);
-                foreignPersonalBuffs.each((index, element) => calculateSubSection(element));
-                calculateTotalBuffs();
-                $("#buff-class-removed").text($(foreignPersonalBuffs).one().closest("[data-class]").data("class").toString().capitalize());
-                $("#buff-class-selected").text(clickedClassType.capitalize());
-                $("#personal-buff-toast").toast("show");
+                if (foreignPersonalBuffs.length > 0) {
+                    foreignPersonalBuffs.prop("checked", false);
+                    foreignPersonalBuffs.each((index, element) => calculateSubSection(element));
+                    calculateTotalBuffs();
+                    $("#buff-class-removed").text($(foreignPersonalBuffs).one().closest("[data-class]").data("class").toString().capitalize());
+                    $("#buff-class-selected").text(clickedClassType.capitalize());
+                    $("#personal-buff-toast").toast("show");
+                }
             }
 
         }
