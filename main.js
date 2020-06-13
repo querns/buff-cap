@@ -1,3 +1,25 @@
+function processCheckbox(element) {
+    if ($(element).prop("checked")) {
+        const match = $(element).prop("id").match(/spell-(\d+)/);
+        if (match) {
+            return match[1];
+        }
+    }
+    return null;
+}
+
+function processHiddenInput(element) {
+    const id = $(element).prop("id");
+    const match = id.match(/spell-(\d+)/);
+    const count = parseInt($(element).val());
+
+    if (!match || isNaN(count)) {
+        return null;
+    }
+
+    return {spellID: id, count: count}
+}
+
 function calculateTotalBuffs() {
     const buffCountContainer = $("#buff-count-container");
 
@@ -7,28 +29,22 @@ function calculateTotalBuffs() {
     let colorBlindBadge;
 
     $("input[type='checkbox']").each((index, element) => {
-        if ($(element).prop("checked")) {
-            count++;
-
-            const id = $(element).prop("id");
-            const match = id.match(/spell-(\d+)/);
-            if (match) {
-                selectedBuffs.push(match[1]);
-            }
+        const spellID = processCheckbox(element);
+        if (spellID) {
+            count += 1;
+            selectedBuffs.push(spellID);
         }
     });
+
     $("input[type='hidden']").each((index, element) => {
-        const id = $(element).prop("id");
-        const match = id.match(/spell-(\d+)/);
-        const stackingCount = parseInt($(element).val());
+        const inputData = processHiddenInput(element);
+        if (inputData) {
+            const stackingCount = inputData["count"];
 
-        if (!match || isNaN(stackingCount)) {
-            return;
-        }
-
-        count += stackingCount;
-        for (let i = 0; i < stackingCount; i++) {
-            selectedBuffs.push(match[1]);
+            count += stackingCount;
+            for (let i = 0; i < stackingCount; i++) {
+                selectedBuffs.push(inputData["spellID"]);
+            }
         }
     });
 
@@ -64,6 +80,7 @@ function calculateTotalBuffs() {
     $("#total-buff-count").text(count);
     $("[data-color-blind-help]").addClass("hidden");
     $(colorBlindBadge).removeClass("hidden");
+    calculateCategorySubtotals();
 
     if (selectedBuffs.length > 0) {
         const bytes16 = new Uint16Array(selectedBuffs.sort());
@@ -80,6 +97,33 @@ function calculateTotalBuffs() {
     } else {
         history.replaceState(null, null, "#");
     }
+}
+
+function calculateCategorySubtotals() {
+    $("[data-primary-category]").each((index, element) => {
+        const displayElement = $(element).find("[data-category-count]");
+        let subtotal = 0;
+
+        $(element).find("input[type='checkbox']").each((index, element) => {
+            const spellID = processCheckbox(element);
+            if (spellID) {
+                subtotal += 1;
+            }
+        });
+
+        $(element).find("input[type='hidden']").each((index, element) => {
+            const inputData = processHiddenInput(element);
+            if (inputData) {
+                subtotal += inputData["count"];
+            }
+        });
+
+        if (subtotal === 0) {
+            $(displayElement).text(" ");
+        } else {
+            $(displayElement).text(` (${subtotal})`);
+        }
+    });
 }
 
 function calculateSubSection(currentTarget) {
