@@ -17,7 +17,7 @@ function processHiddenInput(element) {
         return null;
     }
 
-    return {spellID: id, count: count}
+    return {spellID: match[1], count: count}
 }
 
 function calculateTotalBuffs() {
