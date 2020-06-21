@@ -242,11 +242,54 @@
                         <a href="#smitten" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="smitten">Multiple buffs can be acquired via layer abuse<br />and between server restarts.</small>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-29332"/>
-                        <a href="https://classic.wowhead.com/item=23327/fire-toasted-bun"><img src="img/inv_misc_food_11.jpg" alt="Fire-toasted Bun"/></a>
-                        <label for="spell-29332">Fire-toasted Bun</label>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_misc_summerfest_brazierorange.jpg" alt="Midsummer Fire Festival"/> Fire Festival Buffs
+                        <a href="#fire-festival" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="fire-festival">
+                            <li>
+                                <input type="checkbox" id="spell-29338"/>
+                                <a href="https://classic.wowhead.com/spell=29338/fire-festival-fury" data-wowhead="buff"><img src="img/inv_misc_summerfest_brazierorange.jpg" alt="Fire Festival Fury"/></a>
+                                <label for="spell-29338">Fire Festival Fury</label>
+                                <a href="#fire-festival-fury" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="fire-festival-fury">Throw a <a data-info href="https://classic.wowhead.com/item=23247/burning-blossom">Burning Blossom</a> into a bonfire.</small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29175"/>
+                                <a href="https://classic.wowhead.com/spell=29175/ribbon-dance" data-wowhead="buff"><img src="img/inv_summerfest_symbol_medium.jpg" alt="Ribbon Dance"/></a>
+                                <label for="spell-29175">Ribbon Dance</label>
+                                <a href="#ribbon-dance" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="ribbon-dance">Dance with at least one other person around a Ribbon Pole.</small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29388"/>
+                                <a href="https://classic.wowhead.com/spell=29388/breath-of-fire" data-wowhead="buff"><img src="img/inv_summerfest_firedrink.jpg" alt="Fiery Festival Brew"/></a>
+                                <label for="spell-29388">Fiery Festival Brew</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29332"/>
+                                <a href="https://classic.wowhead.com/spell=29332/fire-toasted-bun" data-wowhead="buff"><img src="img/inv_misc_food_11.jpg" alt="Fire-toasted Bun"/></a>
+                                <label for="spell-29332">Fire-toasted Bun</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29335"/>
+                                <a href="https://classic.wowhead.com/spell=29335/elderberry-pie" data-wowhead="buff"><img src="img/inv_misc_food_10.jpg" alt="Elderberry Pie"/></a>
+                                <label for="spell-29335">Elderberry Pie</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29333"/>
+                                <a href="https://classic.wowhead.com/spell=29333/midsummer-sausage" data-wowhead="buff"><img src="img/inv_misc_food_53.jpg" alt="Midsummer Sausage"/></a>
+                                <label for="spell-29333">Midsummer Sausage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-29334"/>
+                                <a href="https://classic.wowhead.com/spell=29334/toasted-smorc" data-wowhead="buff"><img src="img/inv_summerfest_smorc.jpg" alt="Toasted Smorc"/></a>
+                                <label for="spell-29334">Toasted Smorc</label>
+                            </li>
+                        </ul>
+                        <div class="buff-summary"></div>
                     </div>
+
                     <div>
                         <input type="checkbox" id="spell-24705"/>
                         <a href="https://classic.wowhead.com/spell=24705/invocation-of-the-wickerman" data-wowhead="buff"><img src="img/inv_waepon_bow_zulgrub_d_02.jpg" alt="Invocation of the Wickerman"/></a>
