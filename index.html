@@ -454,6 +454,11 @@
                         <a href="#ckl" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                         <small class="collapse mb-sm-3" id="ckl">Puts <a href="https://classic.wowhead.com/item=20130/diamond-flask">Diamond Flask</a> on cooldown and vice versa.</small>
                     </div>
+                    <div>
+                        <input type="checkbox" id="spell-25907"/>
+                        <a href="https://classic.wowhead.com/spell=25907/spell-blasting" data-wowhead="buff"><img src="img/inv_jewelry_ring_40.jpg" alt="Wrath of Cenarius"/></a>
+                        <label for="spell-25907">Wrath of Cenarius</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1363,8 +1368,9 @@
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-27420"/>
+                    <div class="stacking-buff">
+                        <span class="stacking-count">&nbsp;</span>
+                        <input type="hidden" id="spell-27420" value="0"/>
                         <a href="https://classic.wowhead.com/spell=27420/ectoplasmic-distiller"><img src="img/spell_lightning_lightningbolt01.jpg" alt="Ectoplasmic Distiller"/></a>
                         <label for="spell-27420">Ectoplasmic Distiller</label>
                     </div>
