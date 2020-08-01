@@ -397,11 +397,6 @@
                         <small class="collapse mb-sm-3" id="crusader">Main hand and off-hand procs are separate and stack.<br/>3+ procs are possible with weapon swapping.</small>
                     </div>
                     <div>
-                        <input type="checkbox" id="spell-7218"/>
-                        <a href="https://classic.wowhead.com/item=6043/iron-counterweight"><img src="img/inv_misc_orb_01.jpg" alt="Iron Counterweight"/></a>
-                        <label for="spell-7218">Iron Counterweight</label>
-                    </div>
-                    <div>
                         <input type="checkbox" id="spell-25123"/>
                         <img src="img/inv_potion_100.jpg" alt="Weapon Oils"/>
                         <label for="spell-25123">Weapon Oils</label>
@@ -1529,25 +1524,51 @@
                         <img src="img/classicon_druid.jpg" alt="Druid Buffs" /> <span class="druid-color">Druid Buffs</span> <a href="#druid-personal-buffs" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3 sub-section personal-buffs" id="druid-personal-buffs" data-class="druid" data-parent="#personal-buffs">
                             <li>
-                                <input type="checkbox" id="spell-9634"/>
-                                <img src="img/ability_racial_bearform.jpg" alt="Shapeshift Form"/>
-                                <label for="spell-9634" class="druid-color">Shapeshift Form</label>
-                                <a href="#shapeshift-form" data-toggle="collapse">▼</a>
-                                <ul class="collapse" id="shapeshift-form" data-info>
-                                    <li><a href="https://classic.wowhead.com/spell=9634/dire-bear-form"><img src="img/ability_racial_bearform.jpg" alt="Shapeshift Form" class="druid-color"/> Dire Bear Form</a></li>
-                                    <li><a href="https://classic.wowhead.com/spell=768/cat-form"><img src="img/ability_druid_catform.jpg" alt="Shapeshift Form" class="druid-color"/> Cat Form</a></li>
-                                    <li><a href="https://classic.wowhead.com/spell=24858/moonkin-form"><img src="img/spell_nature_forceofnature.jpg" alt="Shapeshift Form" class="druid-color"/> Moonkin Form</a></li>
-                                </ul>
+                                <input type="checkbox" id="spell-9634" data-exclusive="druid-shapeshift" data-inclusion-category="druid-bear-form"/>
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-64634" data-exclusive="druid-shapeshift" data-inclusion-category="druid-bear-form"/>
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-64633" data-exclusive="druid-shapeshift" data-inclusion-category="druid-bear-form"/>
+                                <a href="https://classic.wowhead.com/spell=9634/dire-bear-form" data-wowhead="buff"><img src="img/ability_racial_bearform.jpg" alt="Dire Bear Form"/></a>
+                                <label for="spell-9634" class="druid-color">Dire Bear Form</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-768" data-exclusive="druid-shapeshift" data-inclusion-category="druid-cat-form" />
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-60768" data-exclusive="druid-shapeshift" data-inclusion-category="druid-cat-form" />
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-60769" data-exclusive="druid-shapeshift" data-inclusion-category="druid-cat-form" />
+                                <a href="https://classic.wowhead.com/spell=768/cat-form" data-wowhead="buff"><img src="img/ability_druid_catform.jpg" alt="Cat Form"/></a>
+                                <label for="spell-768" class="druid-color">Cat Form</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-24858" data-exclusive="druid-shapeshift" data-inclusion-category="druid-moonkin-form" />
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-64858" data-exclusive="druid-shapeshift" data-inclusion-category="druid-moonkin-form" />
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-64857" data-exclusive="druid-shapeshift" data-inclusion-category="druid-moonkin-form" />
+                                <a href="https://classic.wowhead.com/spell=24858/moonkin-form" data-wowhead="buff"><img src="img/spell_nature_forceofnature.jpg" alt="Moonkin Form"/></a>
+                                <label for="spell-24858" class="druid-color">Moonkin Form</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-17061"/>
                                 <a href="https://classic.wowhead.com/spell=17061/furor"><img src="img/spell_holy_blessingofstamina.jpg" alt="Furor"/></a>
-                                <label for="spell-17061" class="druid-color">Furor</label>
+                                <label for="spell-17061" class="druid-color">Furor (Bear)</label>
+                                <a href="#furor" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="furor">
+                                    Applies for three seconds after shifting to Dire Bear Form.<br />
+                                    Furor (Cat) does not take a buff slot.
+                                </small>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-5229"/>
                                 <a href="https://classic.wowhead.com/spell=5229/enrage" data-wowhead="buff"><img src="img/ability_druid_enrage.jpg" alt="Enrage"/></a>
                                 <label for="spell-5229" class="druid-color">Enrage</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-24866"/>
+                                <a href="https://classic.wowhead.com/spell=24866/feline-swiftness"><img src="img/spell_nature_spiritwolf.jpg" alt="Feline Swiftness"/></a>
+                                <label for="spell-24866" class="druid-color">Feline Swiftness</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-16864"/>
@@ -1560,7 +1581,9 @@
                                 <label for="spell-16870" class="druid-color">Clearcasting</label>
                             </li>
                             <li>
-                                <input type="checkbox" id="spell-22812"/>
+                                <input type="checkbox" id="spell-22812" data-inclusion-category="barkskin" />
+                                <!--suppress HtmlFormInputWithoutLabel -->
+                                <input type="checkbox" id="spell-62812" data-inclusion-category="barkskin" />
                                 <a href="https://classic.wowhead.com/spell=22812/barkskin" data-wowhead="buff"><img src="img/spell_nature_stoneclawtotem.jpg" alt="Barkskin"/></a>
                                 <label for="spell-22812" class="druid-color">Barkskin</label>
                             </li>
@@ -1573,16 +1596,6 @@
                                 <input type="checkbox" id="spell-22896"/>
                                 <a href="https://classic.wowhead.com/spell=22896/frenzied-regeneration" data-wowhead="buff"><img src="img/ability_bullrush.jpg" alt="Frenzied Regeneration"/></a>
                                 <label for="spell-22896" class="druid-color">Frenzied Regeneration</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="spell-16975"/>
-                                <a href="https://classic.wowhead.com/spell=16975/predatory-strikes"><img src="img/ability_hunter_pet_cat.jpg" alt="Predatory Strikes"/></a>
-                                <label for="spell-16975" class="druid-color">Predatory Strikes</label>
-                            </li>
-                            <li>
-                                <input type="checkbox" id="spell-24894"/>
-                                <a href="https://classic.wowhead.com/spell=24894/heart-of-the-wild"><img src="img/spell_holy_blessingofagility.jpg" alt="Heart of the Wild"/></a>
-                                <label for="spell-24894" class="druid-color">Heart of the Wild</label>
                             </li>
                             <li>
                                 <input type="checkbox" id="spell-13494"/>

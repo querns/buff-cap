@@ -253,10 +253,18 @@ String.prototype.capitalize = function() {
             calculateSubSection(e.currentTarget);
         }
 
+        if (currentTarget.data("inclusion-category") !== undefined) {
+            $(`input[data-inclusion-category="${(currentTarget.data("inclusion-category"))}"][type="checkbox"]`)
+                .prop("checked", currentTarget.prop("checked"));
+
+            calculateSubSection(e.currentTarget);
+        }
+
         if (currentTarget.data("exclusive") !== undefined) {
             if (currentTarget.prop("checked")) {
                 const category = currentTarget.data("exclusive");
-                $(`input[data-exclusive='${category}']`).each((index, checkbox) => {
+                const inclusionCategory = currentTarget.data("inclusion-category");
+                $(`input[data-exclusive='${category}'][data-inclusion-category!="${inclusionCategory}"]`).each((index, checkbox) => {
                     if (checkbox !== e.currentTarget) {
                         $(checkbox).prop("checked", false);
                     }
