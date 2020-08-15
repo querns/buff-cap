@@ -690,15 +690,25 @@
                         <img src="img/spell_misc_food.jpg" alt="Food Buff"/>
                         <label for="spell-18125">Well Fed / Food Buff</label>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-25804"/>
-                        <img src="img/inv_drink_04.jpg" alt="Alcohol"/>
-                        <label for="spell-25804">Alcohol</label>
-                        <a href="#alcohol" data-toggle="collapse">▼</a>
-                        <ul class="collapse mb-sm-3" id="alcohol">
-                            <li><a href="https://classic.wowhead.com/item=18284/kreegs-stout-beatdown"><img src="img/inv_drink_05.jpg" alt="Kreeg's Stout Beatdown" /> Kreeg's Stout Beatdown</a></li>
-                            <li><a href="https://classic.wowhead.com/item=21151/rumsey-rum-black-label"><img src="img/inv_drink_04.jpg" alt="Rumsey Rum Black Label" /> Rumsey Rum Black Label</a></li>
-                            <li><a href="https://classic.wowhead.com/item=18269/gordok-green-grog"><img src="img/inv_drink_03.jpg" alt="Gordok Green Grog" /> Gordok Green Grog</a></li>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_drink_04.jpg" alt="Alcohol"/> Alcohol <a href="#alcohol" data-toggle="collapse">▼</a>
+                        <ul class="collapse sub-section" id="alcohol">
+                            <li>
+                                <input type="checkbox" id="spell-22790"/>
+                                <a href="https://classic.wowhead.com/spell=22790/kreegs-stout-beatdown" data-wowhead="buff"><img src="img/inv_drink_05.jpg" alt="Kreeg's Stout Beatdown" /></a>
+                                <label for="spell-22790">Kreeg's Stout Beatdown</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25804" data-exclusive="stam-alcohol"/>
+                                <a href="https://classic.wowhead.com/spell=25804/rumsey-rum-black-label" data-wowhead="buff"><img src="img/inv_drink_04.jpg" alt="Rumsey Rum Black Label" /></a>
+                                <label for="spell-25804">Rumsey Rum Black Label</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-22789" data-exclusive="stam-alcohol"/>
+                                <a href="https://classic.wowhead.com/spell=22789/gordok-green-grog"><img src="img/inv_drink_03.jpg" alt="Gordok Green Grog" /></a>
+                                <label for="spell-22789">Gordok Green Grog</label>
+                            </li>
                         </ul>
                     </div>
                     <div>
