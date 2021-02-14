@@ -267,6 +267,7 @@ String.prototype.capitalize = function() {
                 $(`input[data-exclusive='${category}'][data-inclusion-category!="${inclusionCategory}"]`).each((index, checkbox) => {
                     if (checkbox !== e.currentTarget) {
                         $(checkbox).prop("checked", false);
+                        calculateSubSection(checkbox);
                     }
                 });
 

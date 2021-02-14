@@ -169,6 +169,53 @@
                             Buff persists after leaving the battleground.
                         </small>
                     </div>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Some members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_misc_gem_ruby_01.jpg" alt="Mangletooth Buffs" /> Mangletooth Buffs
+                        <a href="#mangletooth" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="mangletooth">
+                            <li>
+                                <input type="checkbox" id="spell-17013"/>
+                                <a href="https://classic.wowhead.com/spell=17013/agamaggans-agility" data-wowhead="buff"><img src="img/spell_nature_windfury.jpg" alt="Agamaggan's Agility"/></a>
+                                <label for="spell-17013">Agamaggan's Agility</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16612"/>
+                                <a href="https://classic.wowhead.com/spell=16612/agamaggans-strength" data-wowhead="buff"><img src="img/spell_nature_strength.jpg" alt="Agamaggan's Strength"/></a>
+                                <label for="spell-16612">Agamaggan's Strength</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16610"/>
+                                <a href="https://classic.wowhead.com/spell=16610/razorhide" data-wowhead="buff"><img src="img/spell_nature_thorns.jpg" alt="Razorhide"/></a>
+                                <label for="spell-16610">Razorhide</label>
+                                <a href="#razorhide" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="razorhide">
+                                    Grants +25% armor and 7 thorns damage.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-10767"/>
+                                <a href="https://classic.wowhead.com/spell=10767/rising-spirit" data-wowhead="buff"><img src="img/spell_nature_manaregentotem.jpg" alt="Rising Spirit"/></a>
+                                <label for="spell-10767">Rising Spirit</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-16618"/>
+                                <a href="https://classic.wowhead.com/spell=16618/spirit-of-the-wind" data-wowhead="buff"><img src="img/spell_nature_earthbind.jpg" alt="Spirit of the Wind"/></a>
+                                <label for="spell-16618">Spirit of the Wind</label>
+                                <a href="#spirit-of-the-wind" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="spirit-of-the-wind">
+                                    Grants +30% move speed. Does not stack with other forms of movement speed increase.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-7764"/>
+                                <a href="https://classic.wowhead.com/spell=7764/wisdom-of-agamaggan" data-wowhead="buff"><img src="img/spell_arcane_blink.jpg" alt="Wisdom of Agamaggan"/></a>
+                                <label for="spell-7764">Wisdom of Agamaggan</label>
+                            </li>
+                        </ul>
+                        <div class="buff-summary"></div>
+
+                    </div>
                 </div>
             </div>
             <!--Holiday-->
@@ -187,40 +234,32 @@
                         <a href="https://classic.wowhead.com/spell=26522/lunar-fortune" data-wowhead="buff"><img src="img/inv_misc_missilelargecluster_white.jpg" alt="Lucky Rocket Cluster"/></a>
                         <label for="spell-26522">Lucky Rocket Cluster</label>
                     </div>
-                    <div>
-                        <input type="checkbox" id="spell-5816"/>
-                        <a href="https://classic.wowhead.com/item=5816/light-of-elune"><img src="img/inv_potion_13.jpg" alt="Light of Elune"/></a>
-                        <label for="spell-5816">Light of Elune</label>
-                    </div>
+
                     <div>
                         <input type="checkbox" id="spell-26393"/>
                         <a href="https://classic.wowhead.com/spell=26393/elunes-blessing" data-wowhead="buff"><img src="img/inv_misc_gem_pearl_02.jpg" alt="Elune's Blessing"/></a>
                         <label for="spell-26393">Elune's Blessing</label>
                     </div>
-                    <!--Valentine's Day Collection-->
-                    <div>
-                        <div>
-                            <input type="checkbox" id="spell-27669" data-exclusive="non-profession"/>
-                            <img src="img/inv_misc_gift_01.jpg" alt="Valentine's Day Collection"/>
-                            <label for="spell-27669">Valentine's Day Collection</label>
-                            <a href="#valentines-collection" data-toggle="collapse">▼</a>
-                        </div>
-                        <ul class="collapse mb-sm-3" id="valentines-collection">
-                            <li><small>In the <a class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#non-profession-exclusion-modal">non-profession consumable<br/>exclusion category.</a></small></li>
-                            <li><a href="https://classic.wowhead.com/spell=27669/orgrimmar-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Orgrimmar Gift of Friendship"/> Orgrimmar Gift of Friendship</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=27671/undercity-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_04.png" alt="Undercity Gift of Friendship"/> Undercity Gift of Friendship</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=27670/thunder-bluff-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_05.png" alt="Thunder Bluff Gift of Friendship"/> Thunder Bluff Gift of Friendship</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=27665/ironforge-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Ironforge Gift of Friendship"/> Ironforge Gift of Friendship</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=27664/stormwind-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_03.png" alt="Stormwind Gift of Friendship"/> Stormwind Gift of Friendship</a></li>
-                            <li><a href="https://classic.wowhead.com/spell=27666/darnassus-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_02.png" alt="Darnassus Gift of Friendship"/> Darnassus Gift of Friendship</a></li>
-                        </ul>
-                    </div>
-                    <!--Valentine's Candy-->
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
-                        <img src="img/inv_valentinesboxofchocolates01.jpg" alt="Valentine's Day Candy" /> Valentine's Day Candy
+                        <img src="img/inv_valentinesboxofchocolates01.jpg" alt="Valentine's Day Candy" /> Valentine's Day
                         <a href="#valentines-candy" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3 sub-section" id="valentines-candy">
+                            <li>
+                                <input type="checkbox" id="spell-27669" data-exclusive="non-profession"/>
+                                <a href="https://classic.wowhead.com/spell=27669/orgrimmar-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Valentine's Day Collection"/></a>
+                                <label for="spell-27669">Valentine's Day Collection</label>
+                                <a href="#valentines-collection" data-info data-toggle="collapse">▼</a>
+                                <ul class="collapse mb-sm-3" id="valentines-collection">
+                                    <li><small>In the <a data-info class="small-inline exclusion-modal-link" data-toggle="modal" data-target="#non-profession-exclusion-modal">non-profession consumable<br/>exclusion category.</a></small></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27669/orgrimmar-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Orgrimmar Gift of Friendship"/> Orgrimmar Gift of Friendship</a></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27671/undercity-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_04.png" alt="Undercity Gift of Friendship"/> Undercity Gift of Friendship</a></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27670/thunder-bluff-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_05.png" alt="Thunder Bluff Gift of Friendship"/> Thunder Bluff Gift of Friendship</a></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27665/ironforge-gift-of-friendship" data-wowhead="buff"><img src="img/inv_misc_gift_01.jpg" alt="Ironforge Gift of Friendship"/> Ironforge Gift of Friendship</a></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27664/stormwind-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_03.png" alt="Stormwind Gift of Friendship"/> Stormwind Gift of Friendship</a></li>
+                                    <li><a data-info href="https://classic.wowhead.com/spell=27666/darnassus-gift-of-friendship" data-wowhead="buff"><img src="img/INV_Misc_Gift_02.png" alt="Darnassus Gift of Friendship"/> Darnassus Gift of Friendship</a></li>
+                                </ul>
+                            </li>
                             <li>
                                 <input type="checkbox" id="spell-22239"/>
                                 <a href="https://classic.wowhead.com/item=22239/sweet-surprise"><img src="img/inv_valentineschocolate03.jpg" alt="Sweet Surprise"/></a>
@@ -241,15 +280,22 @@
                                 <a href="https://classic.wowhead.com/item=22237/dark-desire"><img src="img/inv_valentineschocolate04.jpg" alt="Dark Desire"/></a>
                                 <label for="spell-22237">Dark Desire</label>
                             </li>
+                            <li>
+                                <input type="checkbox" id="spell-26664"/>
+                                <a href="https://classic.wowhead.com/spell=26664/the-power-of-friendship" data-wowhead="buff"><img src="img/inv_jewelry_ring_03.jpg" alt="The Power of Friendship"/></a>
+                                <label for="spell-26664">The Power of Friendship</label>
+                                <a href="#the-power-of-friendship" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="the-power-of-friendship">Grants +200 max HP.</small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-27572"/>
+                                <a href="https://classic.wowhead.com/spell=27572/smitten" data-wowhead="buff"><img src="img/inv_ammo_arrow_02.jpg" alt="Smitten"/></a>
+                                <label for="spell-27572">Smitten</label>
+                                <a href="#smitten" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="smitten">This buff can no longer be stacked (hotfixed on or about 2020/06/22.)</small>
+                            </li>
                         </ul>
                         <div class="buff-summary"></div>
-                    </div>
-                    <div>
-                        <input type="checkbox" id="spell-27572"/>
-                        <a href="https://classic.wowhead.com/spell=27572/smitten" data-wowhead="buff"><img src="img/inv_ammo_arrow_02.jpg" alt="Smitten"/></a>
-                        <label for="spell-27572">Smitten</label>
-                        <a href="#smitten" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
-                        <small class="collapse mb-sm-3" id="smitten">This buff can no longer be stacked (hotfixed on or about 2020/06/22.)</small>
                     </div>
                     <div class="has-buff-count">
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
@@ -302,13 +348,26 @@
                                 <a href="https://classic.wowhead.com/spell=29334/toasted-smorc" data-wowhead="buff"><img src="img/inv_summerfest_smorc.jpg" alt="Toasted Smorc"/></a>
                                 <label for="spell-29334">Toasted Smorc</label>
                             </li>
+
+                        </ul>
+                        <div class="buff-summary"></div>
+                    </div>
+                    <div class="has-buff-count">
+                        <span class="buff-count" data-toggle="tooltip" data-html="true" title="Members of this group stack.<br />Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
+                        <img src="img/inv_drink_04.jpg" alt="Party Buffs"/> Party Buffs
+                        <a href="#party-buffs" data-toggle="collapse">▼</a>
+                        <ul class="collapse mb-sm-3 sub-section" id="party-buffs">
+                            <li>
+                                <small>
+                                    Available in capital cities for New Years, Lunar New Years, and July 4th.
+                                </small>
+                            </li>
                             <li>
                                 <input type="checkbox" id="spell-26035"/>
                                 <a href="https://classic.wowhead.com/spell=26035/celebrate-good-times" data-wowhead="buff"><img src="img/spell_nature_strength.jpg" alt="Celebrate Good Times!"/></a>
                                 <label for="spell-26035">Celebrate Good Times!</label>
                                 <a href="#celebrate-good-times" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                                 <small class="collapse mb-sm-3" id="celebrate-good-times">
-                                    Only available on July 4th.<br />
                                     Only increases base stats.<br />
                                     <code>/dance</code> with a <a href="https://classic.wowhead.com/npc=15908/orgrimmar-reveler">Reveler</a> in a capital city.
                                 </small>
@@ -319,9 +378,27 @@
                                 <label for="spell-25947">Infatuation</label>
                                 <a href="#infatuation" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
                                 <small class="collapse mb-sm-3" id="infatuation">
-                                    Only available on July 4th.<br />
                                     <code>/kiss</code> a <a href="https://classic.wowhead.com/npc=15908/orgrimmar-reveler" data-info>Reveler</a> in a capital city.<br />
                                     Only works if the NPC mentions wanting a kiss in his/her gossip.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-26008"/>
+                                <a href="https://classic.wowhead.com/spell=26008/toast" data-wowhead="buff"><img src="img/inv_misc_pocketwatch_01.jpg" alt="Toast"/></a>
+                                <label for="spell-26008">Toast</label>
+                                <a href="#toast" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="toast">
+                                    Have another player use a <a href="https://classic.wowhead.com/item=21267/toasting-goblet" data-info>Toasting Goblet</a> on you.
+                                </small>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-25851"/>
+                                <a href="https://classic.wowhead.com/spell=25851/lightheaded" data-wowhead="buff"><img src="img/inv_drink_04.jpg" alt="Lightheaded"/></a>
+                                <label for="spell-25851">Lightheaded</label>
+                                <a href="#lightheaded" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                                <small class="collapse mb-sm-3" id="lightheaded">
+                                    Grants slow fall.<br />
+                                    Use a <a href="https://classic.wowhead.com/item=21171/filled-festive-mug" data-info>Filled Festive Mug.</a>
                                 </small>
                             </li>
                         </ul>
@@ -331,6 +408,15 @@
                         <input type="checkbox" id="spell-24705"/>
                         <a href="https://classic.wowhead.com/spell=24705/invocation-of-the-wickerman" data-wowhead="buff"><img src="img/inv_waepon_bow_zulgrub_d_02.jpg" alt="Invocation of the Wickerman"/></a>
                         <label for="spell-24705">Invocation of the Wickerman</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-26004"/>
+                        <a href="https://classic.wowhead.com/spell=26004/mistletoe" data-wowhead="buff"><img src="img/spell_nature_healingtouch.jpg" alt="Mistletoe"/></a>
+                        <label for="spell-26004">Mistletoe</label>
+                        <a href="#mistletoe" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="mistletoe">
+                            Have another player use a <a href="https://classic.wowhead.com/item=21519/mistletoe" data-info>Mistletoe</a> on you.
+                        </small>
                     </div>
                     <div>
                         <input type="checkbox" id="spell-23768"/>
@@ -458,6 +544,22 @@
                         <input type="checkbox" id="spell-25907"/>
                         <a href="https://classic.wowhead.com/spell=25907/spell-blasting" data-wowhead="buff"><img src="img/inv_jewelry_ring_40.jpg" alt="Wrath of Cenarius"/></a>
                         <label for="spell-25907">Wrath of Cenarius</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-29112"/>
+                        <a href="https://classic.wowhead.com/spell=29112/champion-of-the-dawn"><img src="img/inv_misc_token_argentdawn2.jpg" alt="Champion of the Dawn"/></a>
+                        <label for="spell-29112">Champion of the Dawn</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="spell-17670"/>
+                        <a href="https://classic.wowhead.com/spell=17670/argent-dawn-commission" data-wowhead="buff"><img src="img/inv_jewelry_talisman_07.jpg" alt="Argent Dawn Commission"/></a>
+                        <label for="spell-17670">Argent Dawn Commission</label>
+                        <a href="#argent-dawn-commission" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
+                        <small class="collapse mb-sm-3" id="argent-dawn-commission">
+                            Applied on equipping the various Argent Dawn trinkets. <br />
+                            Can be removed with the command: <br />
+                            <code>/cancelaura Argent Dawn Commission</code>
+                        </small>
                     </div>
                 </div>
             </div>
@@ -812,6 +914,11 @@
                         </ul>
                         <div class="buff-summary"></div>
                     </div>
+                    <div>
+                        <input type="checkbox" id="spell-5816"/>
+                        <a href="https://classic.wowhead.com/item=5816/light-of-elune"><img src="img/inv_potion_13.jpg" alt="Light of Elune"/></a>
+                        <label for="spell-5816">Light of Elune</label>
+                    </div>
                 </div>
             </div>
         </div>
@@ -883,6 +990,11 @@
                                 <input type="checkbox" id="spell-2893"/>
                                 <a href="https://classic.wowhead.com/spell=2893/abolish-poison" data-wowhead="buff"><img src="img/spell_nature_nullifypoison_02.jpg" alt="Abolish Poison"/></a>
                                 <label for="spell-2893" class="druid-color">Abolish Poison</label>
+                            </li>
+                            <li>
+                                <input type="checkbox" id="spell-28750"/>
+                                <a href="https://classic.wowhead.com/spell=28750/blessing-of-the-claw" data-wowhead="buff"><img src="img/spell_holy_blessingofagility.jpg" alt="T3 6pc Proc (Blessing of the Claw)"/></a>
+                                <label for="spell-28750" class="druid-color">T3 6pc Proc</label>
                             </li>
                         </ul>
                         <div class="buff-summary"></div>
@@ -1321,8 +1433,9 @@
                         <span class="buff-count" data-toggle="tooltip" data-html="true" title="Click the ▼ to expand this group.<br />Click this box to clear all marked members of this group.">&nbsp;</span>
                         <img src="img/inv_jewelry_talisman_12.jpg" alt="Equipment Raid Buffs" /> Equipment Raid Buffs <a href="#equipment-raid-buffs" data-toggle="collapse">▼</a>
                         <ul class="collapse mb-sm-3 sub-section" id="equipment-raid-buffs">
-                            <li>
-                                <input type="checkbox" id="spell-23060"/>
+                            <li class="stacking-buff">
+                                <span class="stacking-count">&nbsp;</span>
+                                <input type="hidden" id="spell-23060" value="0" data-maximum="5"/>
                                 <a href="https://classic.wowhead.com/spell=23060/battle-squawk" data-wowhead="buff"><img src="img/inv_misc_birdbeck_01.jpg" alt="Battle Squawk"/></a>
                                 <label for="spell-23060">Battle Squawk</label>
                                 <a href="#battle-chicken" data-toggle="collapse"><img src="img/Information.png" alt="More Info" data-info/></a>
