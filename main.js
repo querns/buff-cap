@@ -128,14 +128,31 @@ function calculateCategorySubtotals() {
 
 function calculateSubSection(currentTarget) {
     const selectedBuffs = $(currentTarget).closest("ul").find("input[type='checkbox']:checked");
+    const selectedHiddenElements = $(currentTarget)
+        .closest("ul")
+        .find("input[type='hidden']")
+        .filter(function () {
+            return $(this).val() > 0;
+        });
     const summary = $(currentTarget).closest(".has-buff-count").find(".buff-summary");
+
+    let hiddenElementCount = 0;
+    selectedHiddenElements.each((index, element) => {
+        const inputData = processHiddenInput(element);
+        if (inputData) {
+            hiddenElementCount += inputData["count"];
+        }
+    });
+
+    const buffCount = selectedBuffs.length + hiddenElementCount;
+
     $(currentTarget)
         .closest(".has-buff-count")
-        .find(".buff-count").text(selectedBuffs.length === 0 ? "" : selectedBuffs.length);
+        .find(".buff-count").text(buffCount === 0 ? "" : buffCount);
 
     $(summary).tooltip("dispose");
     $(summary).empty();
-    $(selectedBuffs).each((index, element) => {
+    $(selectedBuffs).add(selectedHiddenElements).each((index, element) => {
         $(element).closest("li")
             .find("a:not(:has(img[data-info])):not([data-info])")
             .clone(true)
@@ -301,6 +318,7 @@ String.prototype.capitalize = function() {
         countElement.text(newValue === 0 ? "" : newValue);
         input.val(newValue);
         calculateTotalBuffs();
+        calculateSubSection(currentTarget);
     }
 
     $(".stacking-count, .stacking-buff label")
